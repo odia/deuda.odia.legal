@@ -1,0 +1,13 @@
+El procedimiento de transformacion se encuentra en el script `transform.sh`
+
+1.- por cada archivo en la carpeta `3_unzip_database` 
+2.- extraer el nombre de la tabla usando `mdb-tables`
+3.- por cada tabla transformar los datos usando `mdb-json`
+4.- agregar el nombre de la tabla y la base de datos
+5.- guardar el resultado en `all_data.json`
+
+
+#psql
+
+create table deuda ( content jsonb );
+\copy deuda from '/folder_to_json/all_data.json' csv quote e'\x01' delimiter e'\x02';

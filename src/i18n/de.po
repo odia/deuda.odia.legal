@@ -1,0 +1,1780 @@
+#  This file is part of GNU Taler
+#  (C) 2021 Taler Systems S.A.
+#  GNU Taler is free software; you can redistribute it and/or modify it under the
+#  terms of the GNU General Public License as published by the Free Software
+#  Foundation; either version 3, or (at your option) any later version.
+#  GNU Taler is distributed in the hope that it will be useful, but WITHOUT ANY
+#  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+#  A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#  You should have received a copy of the GNU General Public License along with
+#  GNU Taler; see the file COPYING.  If not, see <http://www.gnu.org/licenses/>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Taler Wallet\n"
+"Report-Msgid-Bugs-To: taler@gnu.org\n"
+"POT-Creation-Date: 2016-11-23 00:00+0100\n"
+"PO-Revision-Date: 2024-03-21 21:39+0000\n"
+"Last-Translator: Stefan Kügel <skuegel@web.de>\n"
+"Language-Team: German <https://weblate.taler.net/projects/gnu-taler/"
+"taler-bank-spa/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.2.1\n"
+
+#: src/utils.ts:137
+#, c-format
+msgid "Operation failed, please report"
+msgstr "Vorgang abgebrochen, bitte Fehler berichten"
+
+#: src/utils.ts:156
+#, c-format
+msgid "Request timeout"
+msgstr "Zeitüberschreitung der Anforderung"
+
+#: src/utils.ts:165
+#, c-format
+msgid "Request throttled"
+msgstr "Anfrage verzögert sich"
+
+#: src/utils.ts:174
+#, c-format
+msgid "Malformed response"
+msgstr "Unstimmige Antwort"
+
+#: src/utils.ts:183
+#, c-format
+msgid "Network error"
+msgstr "Netzwerkfehler"
+
+#: src/utils.ts:192
+#, c-format
+msgid "Unexpected request error"
+msgstr "Unerwarteter Fehler bei der Anforderung"
+
+#: src/utils.ts:201
+#, c-format
+msgid "Unexpected error"
+msgstr "Unerwarteter Fehler"
+
+#: src/utils.ts:377
+#, c-format
+msgid "IBAN numbers usually have more that 4 digits"
+msgstr "IBAN-Nummern haben normalerweise mehr als 4 Ziffern"
+
+#: src/utils.ts:379
+#, c-format
+msgid "IBAN numbers usually have less that 34 digits"
+msgstr "IBAN-Nummern haben normalerweise weniger als 34 Ziffern"
+
+#: src/utils.ts:387
+#, c-format
+msgid "IBAN country code not found"
+msgstr "IBAN-Ländercode wurde nicht gefunden"
+
+#: src/utils.ts:401
+#, c-format
+msgid "IBAN number is not valid, checksum is wrong"
+msgstr "IBAN-Nummer ist ungültig, die Prüfsumme ist falsch"
+
+#: src/context/config.ts:136
+#, c-format
+msgid ""
+"the bank backend is not supported. supported version \"%1$s\", server "
+"version \"%2$s\""
+msgstr ""
+"Das Bank-Backend wird nicht unterstützt. Unterstützte Version \"%1$s\", "
+"Serverversion \"%2$s\""
+
+#: src/hooks/preferences.ts:55
+#, c-format
+msgid "Max withdrawal amount"
+msgstr "Höchste Abhebesumme"
+
+#: src/hooks/preferences.ts:57
+#, c-format
+msgid "Show withdrawal confirmation"
+msgstr ""
+
+#: src/hooks/preferences.ts:59
+#, c-format
+msgid "Show demo description"
+msgstr ""
+
+#: src/hooks/preferences.ts:61
+#, c-format
+msgid "Show install wallet first"
+msgstr ""
+
+#: src/hooks/preferences.ts:63
+#, c-format
+msgid "Use fast withdrawal form"
+msgstr ""
+
+#: src/hooks/preferences.ts:65
+#, c-format
+msgid "Show debug info"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:90
+#, c-format
+msgid "required"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:92
+#, c-format
+msgid "IBAN should have just uppercased letters and numbers"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:98
+#, c-format
+msgid "not valid"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:100
+#, c-format
+msgid "should be greater than 0"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:102
+#, c-format
+msgid "balance is not enough"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:112
+#, c-format
+msgid "does not follow the pattern"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:114
+#, c-format
+msgid "only \"IBAN\" target are supported"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:116
+#, c-format
+msgid "use the \"amount\" parameter to specify the amount to be transferred"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:118
+#, c-format
+msgid "the amount is not valid"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:120
+#, c-format
+msgid ""
+"use the \"message\" parameter to specify a reference text for the transfer"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:160
+#, c-format
+msgid "The request was invalid or the payto://-URI used unacceptable features."
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:167
+#, c-format
+msgid "Not enough permission to complete the operation."
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:174
+#, c-format
+msgid "The destination account \"%1$s\" was not found."
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:181
+#, c-format
+msgid "The origin and the destination of the transfer can't be the same."
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:188
+#, c-format
+msgid "Your balance is not enough."
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:195
+#, c-format
+msgid "The origin account \"%1$s\" was not found."
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:212
+#, c-format
+msgid "Wire transfer created!"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:270
+#, c-format
+msgid "Using a form"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:310
+#, c-format
+msgid "Import payto:// URI"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:335
+#, c-format
+msgid "Recipient"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:359
+#, c-format
+msgid "IBAN of the recipient's account"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:369
+#, c-format
+msgid "Transfer subject"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:377
+#, fuzzy, c-format
+msgid "subject"
+msgstr "Verwendungszweck"
+
+#: src/pages/PaytoWireTransferForm.tsx:390
+#, c-format
+msgid "some text to identify the transfer"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:400
+#, c-format
+msgid "Amount"
+msgstr "Betrag"
+
+#: src/pages/PaytoWireTransferForm.tsx:415
+#, fuzzy, c-format
+msgid "amount to transfer"
+msgstr "Betrag"
+
+#: src/pages/PaytoWireTransferForm.tsx:425
+#, c-format
+msgid "payto URI:"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:436
+#, c-format
+msgid "uniform resource identifier of the target account"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:437
+#, c-format
+msgid "payto://iban/[receiver-iban]?message=[subject]&amount=[%1$s:X.Y]"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:457
+#, c-format
+msgid "Cancel"
+msgstr ""
+
+#: src/pages/PaytoWireTransferForm.tsx:471
+#, c-format
+msgid "Send"
+msgstr ""
+
+#: src/pages/LoginForm.tsx:71
+#, c-format
+msgid "Missing username"
+msgstr ""
+
+#: src/pages/LoginForm.tsx:75
+#, c-format
+msgid "Missing password"
+msgstr ""
+
+#: src/pages/LoginForm.tsx:104
+#, c-format
+msgid "Wrong credentials for \"%1$s\""
+msgstr ""
+
+#: src/pages/LoginForm.tsx:111
+#, c-format
+msgid "Account not found"
+msgstr ""
+
+#: src/pages/LoginForm.tsx:142
+#, c-format
+msgid "Username"
+msgstr ""
+
+#: src/pages/LoginForm.tsx:156
+#, c-format
+msgid "username of the account"
+msgstr ""
+
+#: src/pages/LoginForm.tsx:175
+#, c-format
+msgid "Password"
+msgstr ""
+
+#: src/pages/LoginForm.tsx:188
+#, fuzzy, c-format
+msgid "password of the account"
+msgstr "Buchungen auf öffentlich sichtbaren Konten"
+
+#: src/pages/LoginForm.tsx:223
+#, c-format
+msgid "Check"
+msgstr ""
+
+#: src/pages/LoginForm.tsx:237
+#, c-format
+msgid "Log in"
+msgstr ""
+
+#: src/pages/LoginForm.tsx:249
+#, c-format
+msgid "Register"
+msgstr ""
+
+#: src/components/Transactions/views.tsx:52
+#, c-format
+msgid "Latest transactions"
+msgstr ""
+
+#: src/components/Transactions/views.tsx:63
+#, c-format
+msgid "Date"
+msgstr "Datum"
+
+#: src/components/Transactions/views.tsx:71
+#, c-format
+msgid "Counterpart"
+msgstr "Empfänger"
+
+#: src/components/Transactions/views.tsx:75
+#, c-format
+msgid "Subject"
+msgstr "Verwendungszweck"
+
+#: src/components/Transactions/views.tsx:111
+#, c-format
+msgid "sent"
+msgstr ""
+
+#: src/components/Transactions/views.tsx:112
+#, c-format
+msgid "received"
+msgstr ""
+
+#: src/components/Transactions/views.tsx:127
+#, c-format
+msgid "invalid value"
+msgstr ""
+
+#: src/components/Transactions/views.tsx:136
+#, c-format
+msgid "to"
+msgstr ""
+
+#: src/components/Transactions/views.tsx:136
+#, c-format
+msgid "from"
+msgstr ""
+
+#: src/components/Transactions/views.tsx:202
+#, c-format
+msgid "First page"
+msgstr ""
+
+#: src/components/Transactions/views.tsx:209
+#, c-format
+msgid "Next"
+msgstr ""
+
+#: src/pages/WithdrawalConfirmationQuestion.tsx:86
+#, c-format
+msgid "Wire transfer completed!"
+msgstr ""
+
+#: src/pages/WithdrawalConfirmationQuestion.tsx:93
+#, c-format
+msgid "The withdrawal has been aborted previously and can't be confirmed"
+msgstr ""
+
+#: src/pages/WithdrawalConfirmationQuestion.tsx:100
+#, c-format
+msgid ""
+"The withdrawal operation can't be confirmed before a wallet accepted the "
+"transaction."
+msgstr ""
+
+#: src/pages/WithdrawalConfirmationQuestion.tsx:107
+#, c-format
+msgid "The operation id is invalid."
+msgstr ""
+
+#: src/pages/WithdrawalConfirmationQuestion.tsx:114
+#, c-format
+msgid "The operation was not found."
+msgstr ""
+
+#: src/pages/WithdrawalConfirmationQuestion.tsx:121
+#, c-format
+msgid "Your balance is not enough for the operation."
+msgstr ""
+
+#: src/pages/WithdrawalConfirmationQuestion.tsx:155
+#, c-format
+msgid ""
+"The reserve operation has been confirmed previously and can't be aborted"
+msgstr ""
+
+#: src/pages/WithdrawalConfirmationQuestion.tsx:186
+#, fuzzy, c-format
+msgid "Confirm the withdrawal operation"
+msgstr "Abhebung bestätigen"
+
+#: src/pages/WithdrawalConfirmationQuestion.tsx:203
+#, c-format
+msgid "Wire transfer details"
+msgstr ""
+
+#: src/pages/WithdrawalConfirmationQuestion.tsx:217
+#, c-format
+msgid "Taler Exchange operator's account"
+msgstr ""
+
+#: src/pages/WithdrawalConfirmationQuestion.tsx:228
+#, c-format
+msgid "Taler Exchange operator's name"
+msgstr ""
+
+#: src/pages/WithdrawalConfirmationQuestion.tsx:317
+#, c-format
+msgid "Transfer"
+msgstr ""
+
+#: src/pages/WithdrawalConfirmationQuestion.tsx:342
+#, c-format
+msgid "Authentication required"
+msgstr ""
+
+#: src/pages/WithdrawalConfirmationQuestion.tsx:352
+#, c-format
+msgid "This operation was created with other username"
+msgstr ""
+
+#: src/pages/OperationState/views.tsx:209
+#, c-format
+msgid ""
+"Unauthorized to make the operation, maybe the session has expired or the "
+"password changed."
+msgstr ""
+
+#: src/pages/OperationState/views.tsx:218
+#, c-format
+msgid "The operation was rejected due to insufficient funds."
+msgstr ""
+
+#: src/pages/OperationState/views.tsx:268
+#, c-format
+msgid "Withdrawal confirmed"
+msgstr ""
+
+#: src/pages/OperationState/views.tsx:272
+#, c-format
+msgid ""
+"The wire transfer to the Taler operator has been initiated. You will soon "
+"receive the requested amount in your Taler wallet."
+msgstr ""
+
+#: src/pages/OperationState/views.tsx:287
+#, c-format
+msgid "Do not show this again"
+msgstr ""
+
+#: src/pages/OperationState/views.tsx:319
+#, c-format
+msgid "Close"
+msgstr ""
+
+#: src/pages/OperationState/views.tsx:399
+#, c-format
+msgid "On this device"
+msgstr ""
+
+#: src/pages/OperationState/views.tsx:404
+#, c-format
+msgid ""
+"If you are using a web browser on desktop you should access your wallet with "
+"the GNU Taler WebExtension now or click the link if your WebExtension have "
+"the \"Inject Taler support\" option enabled."
+msgstr ""
+
+#: src/pages/OperationState/views.tsx:417
+#, c-format
+msgid "Start"
+msgstr ""
+
+#: src/pages/OperationState/views.tsx:426
+#, c-format
+msgid "On a mobile phone"
+msgstr ""
+
+#: src/pages/OperationState/views.tsx:431
+#, c-format
+msgid "Scan the QR code with your mobile device."
+msgstr ""
+
+#: src/pages/WalletWithdrawForm.tsx:73
+#, c-format
+msgid "There is an operation already"
+msgstr ""
+
+#: src/pages/WalletWithdrawForm.tsx:75
+#, fuzzy, c-format
+msgid "Complete or cancel the operation in"
+msgstr "Abhebung bestätigen"
+
+#: src/pages/WalletWithdrawForm.tsx:84
+#, c-format
+msgid "this page"
+msgstr ""
+
+#: src/pages/WalletWithdrawForm.tsx:101
+#, c-format
+msgid "invalid"
+msgstr ""
+
+#: src/pages/WalletWithdrawForm.tsx:116
+#, c-format
+msgid "Server responded with an invalid  withdraw URI"
+msgstr ""
+
+#: src/pages/WalletWithdrawForm.tsx:117
+#, c-format
+msgid "Withdraw URI: %1$s"
+msgstr ""
+
+#: src/pages/WalletWithdrawForm.tsx:132
+#, c-format
+msgid "The operation was rejected due to insufficient funds"
+msgstr ""
+
+#: src/pages/WalletWithdrawForm.tsx:253
+#, c-format
+msgid "Continue"
+msgstr ""
+
+#: src/pages/WalletWithdrawForm.tsx:282
+#, c-format
+msgid "Prepare your wallet"
+msgstr ""
+
+#: src/pages/WalletWithdrawForm.tsx:285
+#, c-format
+msgid ""
+"After using your wallet you will need to confirm or cancel the operation on "
+"this site."
+msgstr ""
+
+#: src/pages/WalletWithdrawForm.tsx:295
+#, c-format
+msgid "You need a GNU Taler Wallet"
+msgstr ""
+
+#: src/pages/WalletWithdrawForm.tsx:300
+#, c-format
+msgid "If you don't have one yet you can follow the instruction in"
+msgstr ""
+
+#: src/pages/PaymentOptions.tsx:55
+#, c-format
+msgid "Send money"
+msgstr ""
+
+#: src/pages/PaymentOptions.tsx:73
+#, c-format
+msgid "to a %1$s wallet"
+msgstr ""
+
+#: src/pages/PaymentOptions.tsx:95
+#, c-format
+msgid "Withdraw digital money into your mobile wallet or browser extension"
+msgstr ""
+
+#: src/pages/PaymentOptions.tsx:109
+#, c-format
+msgid "operation ready"
+msgstr ""
+
+#: src/pages/PaymentOptions.tsx:129
+#, c-format
+msgid "to another bank account"
+msgstr ""
+
+#: src/pages/PaymentOptions.tsx:149
+#, c-format
+msgid "Make a wire transfer to an account with known bank account number."
+msgstr ""
+
+#: src/pages/PaymentOptions.tsx:171
+#, c-format
+msgid "Transfer details"
+msgstr ""
+
+#: src/pages/AccountPage/views.tsx:41
+#, c-format
+msgid "This is a demo bank"
+msgstr ""
+
+#: src/pages/AccountPage/views.tsx:46
+#, c-format
+msgid ""
+"This part of the demo shows how a bank that supports Taler directly would "
+"work. In addition to using your own bank account, you can also see the "
+"transaction history of some %1$s."
+msgstr ""
+
+#: src/pages/AccountPage/views.tsx:53
+#, c-format
+msgid ""
+"This part of the demo shows how a bank that supports Taler directly would "
+"work."
+msgstr ""
+
+#: src/pages/AccountPage/views.tsx:70
+#, c-format
+msgid "Pending account delete operation"
+msgstr ""
+
+#: src/pages/AccountPage/views.tsx:72
+#, c-format
+msgid "Pending account update operation"
+msgstr ""
+
+#: src/pages/AccountPage/views.tsx:74
+#, c-format
+msgid "Pending password update operation"
+msgstr ""
+
+#: src/pages/AccountPage/views.tsx:76
+#, c-format
+msgid "Pending transaction operation"
+msgstr ""
+
+#: src/pages/AccountPage/views.tsx:78
+#, c-format
+msgid "Pending withdrawal operation"
+msgstr ""
+
+#: src/pages/AccountPage/views.tsx:80
+#, c-format
+msgid "Pending cashout operation"
+msgstr ""
+
+#: src/pages/AccountPage/views.tsx:91
+#, c-format
+msgid "You can complete or cancel the operation in"
+msgstr ""
+
+#: src/pages/BankFrame.tsx:64
+#, c-format
+msgid "Internal error, please report."
+msgstr ""
+
+#: src/pages/BankFrame.tsx:100
+#, c-format
+msgid "Preferences"
+msgstr ""
+
+#: src/pages/BankFrame.tsx:184
+#, c-format
+msgid "Welcome, %1$s"
+msgstr ""
+
+#: src/pages/WireTransfer.tsx:79
+#, c-format
+msgid "Make a wire transfer"
+msgstr ""
+
+#: src/pages/admin/AccountList.tsx:72
+#, fuzzy, c-format
+msgid "Accounts"
+msgstr "Betrag"
+
+#: src/pages/admin/AccountList.tsx:75
+#, c-format
+msgid "A list of all business account in the bank."
+msgstr ""
+
+#: src/pages/admin/AccountList.tsx:86
+#, c-format
+msgid "Create account"
+msgstr ""
+
+#: src/pages/admin/AccountList.tsx:106
+#, c-format
+msgid "Name"
+msgstr ""
+
+#: src/pages/admin/AccountList.tsx:110
+#, c-format
+msgid "Balance"
+msgstr ""
+
+#: src/pages/admin/AccountList.tsx:112
+#, c-format
+msgid "Actions"
+msgstr ""
+
+#: src/pages/admin/AccountList.tsx:151
+#, c-format
+msgid "unknown"
+msgstr ""
+
+#: src/pages/admin/AccountList.tsx:170
+#, c-format
+msgid "change password"
+msgstr ""
+
+#: src/pages/admin/AccountList.tsx:179
+#, c-format
+msgid "cashouts"
+msgstr ""
+
+#: src/pages/admin/AccountList.tsx:189
+#, c-format
+msgid "remove"
+msgstr ""
+
+#: src/pages/admin/AdminHome.tsx:168
+#, c-format
+msgid "Cashout not implemented"
+msgstr ""
+
+#: src/pages/admin/AdminHome.tsx:184
+#, c-format
+msgid "Select a section"
+msgstr ""
+
+#: src/pages/admin/AdminHome.tsx:202
+#, c-format
+msgid "Last hour"
+msgstr ""
+
+#: src/pages/admin/AdminHome.tsx:208
+#, c-format
+msgid "Last day"
+msgstr ""
+
+#: src/pages/admin/AdminHome.tsx:216
+#, c-format
+msgid "Last month"
+msgstr ""
+
+#: src/pages/admin/AdminHome.tsx:222
+#, c-format
+msgid "Last year"
+msgstr ""
+
+#: src/pages/admin/AdminHome.tsx:310
+#, c-format
+msgid "Last Year"
+msgstr ""
+
+#: src/pages/admin/AdminHome.tsx:325
+#, c-format
+msgid "Trading volume on %1$s compared to %2$s"
+msgstr ""
+
+#: src/pages/admin/AdminHome.tsx:342
+#, c-format
+msgid "Cashin"
+msgstr ""
+
+#: src/pages/admin/AdminHome.tsx:352
+#, c-format
+msgid "Cashout"
+msgstr ""
+
+#: src/pages/admin/AdminHome.tsx:364
+#, c-format
+msgid "Payin"
+msgstr ""
+
+#: src/pages/admin/AdminHome.tsx:374
+#, c-format
+msgid "Payout"
+msgstr ""
+
+#: src/pages/admin/AdminHome.tsx:388
+#, c-format
+msgid "download stats as CSV"
+msgstr ""
+
+#: src/pages/admin/AdminHome.tsx:494
+#, c-format
+msgid "Decreased by"
+msgstr ""
+
+#: src/pages/admin/AdminHome.tsx:498
+#, c-format
+msgid "Increased by"
+msgstr ""
+
+#: src/pages/DownloadStats.tsx:89
+#, c-format
+msgid "Download bank stats"
+msgstr ""
+
+#: src/pages/DownloadStats.tsx:110
+#, c-format
+msgid "Include hour metric"
+msgstr ""
+
+#: src/pages/DownloadStats.tsx:143
+#, c-format
+msgid "Include day metric"
+msgstr ""
+
+#: src/pages/DownloadStats.tsx:173
+#, c-format
+msgid "Include month metric"
+msgstr ""
+
+#: src/pages/DownloadStats.tsx:206
+#, c-format
+msgid "Include year metric"
+msgstr ""
+
+#: src/pages/DownloadStats.tsx:239
+#, c-format
+msgid "Include table header"
+msgstr ""
+
+#: src/pages/DownloadStats.tsx:272
+#, c-format
+msgid "Add previous metric for compare"
+msgstr ""
+
+#: src/pages/DownloadStats.tsx:307
+#, c-format
+msgid "Fail on first error"
+msgstr ""
+
+#: src/pages/DownloadStats.tsx:364
+#, c-format
+msgid "Download"
+msgstr ""
+
+#: src/pages/DownloadStats.tsx:381
+#, c-format
+msgid "downloading... %1$s"
+msgstr ""
+
+#: src/pages/DownloadStats.tsx:399
+#, c-format
+msgid "Download completed"
+msgstr ""
+
+#: src/pages/DownloadStats.tsx:400
+#, c-format
+msgid "click here to save the file in your computer"
+msgstr ""
+
+#: src/pages/PublicHistoriesPage.tsx:78
+#, c-format
+msgid "History of public accounts"
+msgstr "Buchungen auf öffentlich sichtbaren Konten"
+
+#: src/pages/RegistrationPage.tsx:48
+#, c-format
+msgid "Currently, the bank is not accepting new registrations!"
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:87
+#, c-format
+msgid "Missing name"
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:91
+#, c-format
+msgid "Use letters and numbers only, and start with a lowercase letter"
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:107
+#, c-format
+msgid "Passwords don't match"
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:130
+#, c-format
+msgid "Server replied with invalid phone or email."
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:137
+#, c-format
+msgid "Registration is disabled because the bank ran out of bonus credit."
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:144
+#, c-format
+msgid "No enough permission to create that account."
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:151
+#, c-format
+msgid "That account id is already taken."
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:158
+#, c-format
+msgid "That username is already taken."
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:165
+#, c-format
+msgid "That username can't be used because is reserved."
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:172
+#, c-format
+msgid "Only admin is allow to set debt limit."
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:179
+#, c-format
+msgid "No information for the selected authentication channel."
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:186
+#, c-format
+msgid "Authentication channel is not supported."
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:193
+#, c-format
+msgid "Only admin can create accounts with second factor authentication."
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:233
+#, c-format
+msgid "Account registration"
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:315
+#, c-format
+msgid "Repeat password"
+msgstr ""
+
+#: src/pages/RegistrationPage.tsx:457
+#, c-format
+msgid "Create a random temporary user"
+msgstr ""
+
+#: src/pages/QrCodeSection.tsx:110
+#, c-format
+msgid "If you have a Taler wallet installed in this device"
+msgstr ""
+
+#: src/pages/QrCodeSection.tsx:116
+#, c-format
+msgid ""
+"You will see the details of the operation in your wallet including the fees "
+"(if applies). If you still don't have one you can install it following "
+"instructions in"
+msgstr ""
+
+#: src/pages/QrCodeSection.tsx:143
+#, c-format
+msgid "Withdraw"
+msgstr ""
+
+#: src/pages/QrCodeSection.tsx:152
+#, c-format
+msgid "Or if you have the wallet in another device"
+msgstr ""
+
+#: src/pages/QrCodeSection.tsx:157
+#, c-format
+msgid "Scan the QR below to start the withdrawal."
+msgstr ""
+
+#: src/pages/WithdrawalQRCode.tsx:79
+#, c-format
+msgid "Operation aborted"
+msgstr ""
+
+#: src/pages/WithdrawalQRCode.tsx:82
+#, c-format
+msgid ""
+"The wire transfer to the Taler Exchange operator's account was aborted, your "
+"balance was not affected."
+msgstr ""
+
+#: src/pages/WithdrawalQRCode.tsx:88
+#, c-format
+msgid "You can close this page now or continue to the account page."
+msgstr ""
+
+#: src/pages/WithdrawalQRCode.tsx:147
+#, c-format
+msgid "Done"
+msgstr ""
+
+#: src/pages/WithdrawalQRCode.tsx:158
+#, c-format
+msgid "Operation canceled"
+msgstr ""
+
+#: src/pages/WithdrawalQRCode.tsx:173
+#, c-format
+msgid ""
+"The operation is marked as 'selected' but some step in the withdrawal failed"
+msgstr ""
+
+#: src/pages/WithdrawalQRCode.tsx:175
+#, c-format
+msgid "The account is selected but no withdrawal identification found."
+msgstr ""
+
+#: src/pages/WithdrawalQRCode.tsx:188
+#, c-format
+msgid ""
+"There is a withdrawal identification but no account has been selected or the "
+"selected account is invalid."
+msgstr ""
+
+#: src/pages/WithdrawalQRCode.tsx:202
+#, c-format
+msgid ""
+"No withdrawal ID found and no account has been selected or the selected "
+"account is invalid."
+msgstr ""
+
+#: src/pages/WithdrawalQRCode.tsx:259
+#, c-format
+msgid "Operation not found"
+msgstr ""
+
+#: src/pages/WithdrawalQRCode.tsx:263
+#, c-format
+msgid ""
+"This operation is not known by the server. The operation id is wrong or the "
+"server deleted the operation information before reaching here."
+msgstr ""
+
+#: src/pages/WithdrawalQRCode.tsx:278
+#, c-format
+msgid "Cotinue to dashboard"
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:98
+#, c-format
+msgid "Cashout not found. It may be also mean that it was already aborted."
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:136
+#, c-format
+msgid "Challenge not found."
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:143
+#, c-format
+msgid "This user is not authorized to complete this challenge."
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:150
+#, c-format
+msgid "Too many attempts, try another code."
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:157
+#, c-format
+msgid "The confirmation code is wrong, try again."
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:164
+#, c-format
+msgid "The operation expired."
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:197
+#, c-format
+msgid "The operation failed."
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:212
+#, c-format
+msgid "The operation needs another confirmation to complete."
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:224
+#, c-format
+msgid "Account delete"
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:226
+#, c-format
+msgid "Account update"
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:228
+#, c-format
+msgid "Password update"
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:230
+#, c-format
+msgid "Wire transfer"
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:232
+#, fuzzy, c-format
+msgid "Withdrawal"
+msgstr "Abhebung bestätigen"
+
+#: src/pages/SolveChallengePage.tsx:248
+#, fuzzy, c-format
+msgid "Confirm the operation"
+msgstr "Abhebung bestätigen"
+
+#: src/pages/SolveChallengePage.tsx:271
+#, c-format
+msgid "Enter the confirmation code"
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:313
+#, c-format
+msgid "Confirm"
+msgstr "Bestätigen"
+
+#: src/pages/SolveChallengePage.tsx:348
+#, c-format
+msgid "Send again"
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:359
+#, c-format
+msgid "Send code"
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:369
+#, c-format
+msgid "Operation details"
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:529
+#, c-format
+msgid "Challenge details"
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:536
+#, c-format
+msgid "Sent at"
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:551
+#, c-format
+msgid "To phone"
+msgstr ""
+
+#: src/pages/SolveChallengePage.tsx:553
+#, c-format
+msgid "To email"
+msgstr ""
+
+#: src/pages/WithdrawalOperationPage.tsx:49
+#, c-format
+msgid "The Withdrawal URI is not valid"
+msgstr ""
+
+#: src/components/Cashouts/views.tsx:100
+#, c-format
+msgid "Latest cashouts"
+msgstr ""
+
+#: src/components/Cashouts/views.tsx:111
+#, c-format
+msgid "Created"
+msgstr ""
+
+#: src/components/Cashouts/views.tsx:115
+#, c-format
+msgid "Total debit"
+msgstr ""
+
+#: src/components/Cashouts/views.tsx:119
+#, c-format
+msgid "Total credit"
+msgstr ""
+
+#: src/pages/ProfileNavigation.tsx:70
+#, c-format
+msgid "Details"
+msgstr ""
+
+#: src/pages/ProfileNavigation.tsx:74
+#, c-format
+msgid "Delete"
+msgstr ""
+
+#: src/pages/ProfileNavigation.tsx:78
+#, c-format
+msgid "Credentials"
+msgstr ""
+
+#: src/pages/ProfileNavigation.tsx:82
+#, c-format
+msgid "Cashouts"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:95
+#, c-format
+msgid "Unable to create a cashout"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:96
+#, c-format
+msgid "The bank configuration does not support cashout operations."
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:223
+#, c-format
+msgid "need to be higher due to fees"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:225
+#, c-format
+msgid "the total transfer at destination will be zero"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:250
+#, c-format
+msgid "Cashout created"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:272
+#, c-format
+msgid ""
+"Duplicated request detected, check if the operation succeeded or try again."
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:279
+#, c-format
+msgid "The conversion rate was incorrectly applied"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:286
+#, c-format
+msgid "The account does not have sufficient funds"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:293
+#, c-format
+msgid "Cashouts are not supported"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:300
+#, c-format
+msgid "Missing cashout URI in the profile"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:307
+#, c-format
+msgid ""
+"Sending the confirmation message failed, retry later or contact the "
+"administrator."
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:339
+#, c-format
+msgid "Conversion rate"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:360
+#, c-format
+msgid "Fee"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:374
+#, c-format
+msgid "To account"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:381
+#, c-format
+msgid "No cashout account"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:382
+#, c-format
+msgid "Before doing a cashout you need to complete your profile"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:440
+#, fuzzy, c-format
+msgid "Amount to send"
+msgstr "Betrag"
+
+#: src/pages/business/CreateCashout.tsx:441
+#, c-format
+msgid "Amount to receive"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:490
+#, c-format
+msgid "Total cost"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:505
+#, c-format
+msgid "Balance left"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:520
+#, c-format
+msgid "Before fee"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:533
+#, c-format
+msgid "Total cashout transfer"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:553
+#, c-format
+msgid "No cashout channel available"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:555
+#, c-format
+msgid ""
+"Before doing a cashout the server need to provide an second channel to "
+"confirm the operation"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:567
+#, c-format
+msgid "Second factor authentication"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:598
+#, c-format
+msgid "Email"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:600
+#, c-format
+msgid "add a email in your profile to enable this option"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:646
+#, c-format
+msgid "SMS"
+msgstr ""
+
+#: src/pages/business/CreateCashout.tsx:648
+#, c-format
+msgid "add a phone number in your profile to enable this option"
+msgstr ""
+
+#: src/pages/account/CashoutListForAccount.tsx:52
+#, c-format
+msgid "Cashout for account %1$s"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:165
+#, c-format
+msgid "it doesn't have the pattern of an IBAN number"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:185
+#, c-format
+msgid "it doesn't have the pattern of an email"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:190
+#, c-format
+msgid "should start with +"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:192
+#, c-format
+msgid "phone number can't have other than numbers"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:329
+#, c-format
+msgid "account identification in the bank"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:365
+#, c-format
+msgid "name of the person owner the account"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:374
+#, c-format
+msgid "Internal IBAN"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:377
+#, c-format
+msgid "if empty a random account number will be assigned"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:378
+#, c-format
+msgid "account identification for bank transfer"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:423
+#, c-format
+msgid "Phone"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:451
+#, c-format
+msgid "Cashout IBAN"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:452
+#, c-format
+msgid "account number where the money is going to be sent when doing cashouts"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:470
+#, c-format
+msgid "Max debt"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:494
+#, c-format
+msgid "how much is user able to transfer after zero balance"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:508
+#, c-format
+msgid "Is this a Taler Exchange?"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:549
+#, c-format
+msgid "This server doesn't support second factor authentication."
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:560
+#, c-format
+msgid "Enable second factor authentication"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:596
+#, c-format
+msgid "Using email"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:654
+#, c-format
+msgid "Using SMS"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:691
+#, c-format
+msgid "Is this account public?"
+msgstr ""
+
+#: src/pages/admin/AccountForm.tsx:719
+#, c-format
+msgid "public accounts have their balance publicly accessible"
+msgstr ""
+
+#: src/pages/account/ShowAccountDetails.tsx:100
+#, c-format
+msgid "Account updated"
+msgstr ""
+
+#: src/pages/account/ShowAccountDetails.tsx:107
+#, c-format
+msgid "The rights to change the account are not sufficient"
+msgstr ""
+
+#: src/pages/account/ShowAccountDetails.tsx:114
+#, c-format
+msgid "The username was not found"
+msgstr ""
+
+#: src/pages/account/ShowAccountDetails.tsx:121
+#, c-format
+msgid ""
+"You can't change the legal name, please contact the your account "
+"administrator."
+msgstr ""
+
+#: src/pages/account/ShowAccountDetails.tsx:128
+#, c-format
+msgid ""
+"You can't change the debt limit, please contact the your account "
+"administrator."
+msgstr ""
+
+#: src/pages/account/ShowAccountDetails.tsx:135
+#, c-format
+msgid ""
+"You can't change the cashout address, please contact the your account "
+"administrator."
+msgstr ""
+
+#: src/pages/account/ShowAccountDetails.tsx:177
+#, c-format
+msgid "Account \"%1$s\""
+msgstr ""
+
+#: src/pages/account/ShowAccountDetails.tsx:190
+#, c-format
+msgid "Change details"
+msgstr ""
+
+#: src/pages/account/ShowAccountDetails.tsx:235
+#, c-format
+msgid "Update"
+msgstr ""
+
+#: src/pages/account/UpdateAccountPassword.tsx:78
+#, c-format
+msgid "password doesn't match"
+msgstr ""
+
+#: src/pages/account/UpdateAccountPassword.tsx:95
+#, c-format
+msgid "Password changed"
+msgstr ""
+
+#: src/pages/account/UpdateAccountPassword.tsx:102
+#, c-format
+msgid "Not authorized to change the password, maybe the session is invalid."
+msgstr ""
+
+#: src/pages/account/UpdateAccountPassword.tsx:112
+#, c-format
+msgid ""
+"You need to provide the old password. If you don't have it contact your "
+"account administrator."
+msgstr ""
+
+#: src/pages/account/UpdateAccountPassword.tsx:117
+#, c-format
+msgid "Your current password doesn't match, can't change to a new password."
+msgstr ""
+
+#: src/pages/account/UpdateAccountPassword.tsx:149
+#, c-format
+msgid "Update password"
+msgstr ""
+
+#: src/pages/account/UpdateAccountPassword.tsx:167
+#, c-format
+msgid "New password"
+msgstr ""
+
+#: src/pages/account/UpdateAccountPassword.tsx:195
+#, c-format
+msgid "Type it again"
+msgstr ""
+
+#: src/pages/account/UpdateAccountPassword.tsx:217
+#, c-format
+msgid "repeat the same password"
+msgstr ""
+
+#: src/pages/account/UpdateAccountPassword.tsx:227
+#, c-format
+msgid "Current password"
+msgstr ""
+
+#: src/pages/account/UpdateAccountPassword.tsx:248
+#, c-format
+msgid "your current password, for security"
+msgstr ""
+
+#: src/pages/account/UpdateAccountPassword.tsx:272
+#, c-format
+msgid "Change"
+msgstr ""
+
+#: src/pages/admin/CreateNewAccount.tsx:74
+#, c-format
+msgid ""
+"Account created with password \"%1$s\". The user must change the password on "
+"the next login."
+msgstr ""
+
+#: src/pages/admin/CreateNewAccount.tsx:83
+#, c-format
+msgid "Server replied that phone or email is invalid"
+msgstr ""
+
+#: src/pages/admin/CreateNewAccount.tsx:90
+#, c-format
+msgid "The rights to perform the operation are not sufficient"
+msgstr ""
+
+#: src/pages/admin/CreateNewAccount.tsx:97
+#, c-format
+msgid "Account username is already taken"
+msgstr ""
+
+#: src/pages/admin/CreateNewAccount.tsx:104
+#, c-format
+msgid "Account id is already taken"
+msgstr ""
+
+#: src/pages/admin/CreateNewAccount.tsx:111
+#, c-format
+msgid "Bank ran out of bonus credit."
+msgstr ""
+
+#: src/pages/admin/CreateNewAccount.tsx:118
+#, c-format
+msgid "Account username can't be used because is reserved"
+msgstr ""
+
+#: src/pages/admin/CreateNewAccount.tsx:160
+#, c-format
+msgid "Can't create accounts"
+msgstr ""
+
+#: src/pages/admin/CreateNewAccount.tsx:161
+#, c-format
+msgid "Only system admin can create accounts."
+msgstr ""
+
+#: src/pages/admin/CreateNewAccount.tsx:183
+#, c-format
+msgid "New business account"
+msgstr ""
+
+#: src/pages/admin/CreateNewAccount.tsx:209
+#, c-format
+msgid "Create"
+msgstr ""
+
+#: src/pages/admin/RemoveAccount.tsx:94
+#, c-format
+msgid "Can't delete the account"
+msgstr ""
+
+#: src/pages/admin/RemoveAccount.tsx:95
+#, c-format
+msgid ""
+"The account can't be delete while still holding some balance. First make "
+"sure that the owner make a complete cashout."
+msgstr ""
+
+#: src/pages/admin/RemoveAccount.tsx:117
+#, c-format
+msgid "Account removed"
+msgstr ""
+
+#: src/pages/admin/RemoveAccount.tsx:124
+#, c-format
+msgid "No enough permission to delete the account."
+msgstr ""
+
+#: src/pages/admin/RemoveAccount.tsx:131
+#, c-format
+msgid "The username was not found."
+msgstr ""
+
+#: src/pages/admin/RemoveAccount.tsx:138
+#, c-format
+msgid "Can't delete a reserved username."
+msgstr ""
+
+#: src/pages/admin/RemoveAccount.tsx:145
+#, c-format
+msgid "Can't delete an account with balance different than zero."
+msgstr ""
+
+#: src/pages/admin/RemoveAccount.tsx:170
+#, c-format
+msgid "name doesn't match"
+msgstr ""
+
+#: src/pages/admin/RemoveAccount.tsx:180
+#, c-format
+msgid "You are going to remove the account"
+msgstr ""
+
+#: src/pages/admin/RemoveAccount.tsx:182
+#, c-format
+msgid "This step can't be undone."
+msgstr ""
+
+#: src/pages/admin/RemoveAccount.tsx:188
+#, c-format
+msgid "Deleting account \"%1$s\""
+msgstr ""
+
+#: src/pages/admin/RemoveAccount.tsx:206
+#, c-format
+msgid "Verification"
+msgstr ""
+
+#: src/pages/admin/RemoveAccount.tsx:231
+#, c-format
+msgid "enter the account name that is going to be deleted"
+msgstr ""
+
+#: src/pages/business/ShowCashoutDetails.tsx:49
+#, c-format
+msgid "cashout id should be a number"
+msgstr ""
+
+#: src/pages/business/ShowCashoutDetails.tsx:65
+#, c-format
+msgid "This cashout not found. Maybe already aborted."
+msgstr ""
+
+#: src/pages/business/ShowCashoutDetails.tsx:106
+#, c-format
+msgid "Cashout detail"
+msgstr ""
+
+#: src/pages/business/ShowCashoutDetails.tsx:139
+#, c-format
+msgid "Debited"
+msgstr ""
+
+#: src/pages/business/ShowCashoutDetails.tsx:154
+#, c-format
+msgid "Credited"
+msgstr ""
+
+#: src/Routing.tsx:140
+#, c-format
+msgid "Welcome to %1$s!"
+msgstr ""
+
+#, fuzzy, c-format
+#~ msgid "Confirmed"
+#~ msgstr "Bestätigen"
+
+#, c-format
+#~ msgid "Logout"
+#~ msgstr "Abmelden"
+
+#, c-format
+#~ msgid "Skip to main content"
+#~ msgstr "Navigationsmenü überspringen"
+
+#, c-format
+#~ msgid "Taler logo"
+#~ msgstr "Taler-Logo"
+
+#, c-format
+#~ msgid "Please login!"
+#~ msgstr "Bitte melden Sie sich an!"
+
+#, c-format
+#~ msgid "payto address"
+#~ msgstr "payto-Adresse"
+
+#, c-format
+#~ msgid "Bank account balance"
+#~ msgstr "Kontostand"

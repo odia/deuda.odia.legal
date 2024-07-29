@@ -1,0 +1,5 @@
+node_modules
+/build
+/*.log
+/demobank-ui-settings.js
+/dist
