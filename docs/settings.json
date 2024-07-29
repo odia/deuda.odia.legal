@@ -1,0 +1,11 @@
+{
+  "backendBaseURL": "http://bank.taler.test:1180/",
+  "simplePasswordForRandomAccounts": true,
+  "allowRandomAccountCreation": true,
+  "bankName": "Taler DEVELOPMENT Bank",
+  "topNavSites": {
+    "Exchange": "http://Exchnage.taler.test:1180/",
+    "Bank": "http://bank-ui.taler.test:1180/",
+    "Merchant": "http://merchant.taler.test:1180/"
+  }
+}
