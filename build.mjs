@@ -21,7 +21,18 @@ await build({
   type: "production",
   source: {
     js: ["src/index.tsx"],
-    assets: [{ base: "src", files: ["src/index.html"] }],
+    assets: [
+      {
+        base: "src",
+        files: [
+          "src/index.html",
+          "src/settings.json",
+          "src/assets/data/aapl.csv",
+          "src/assets/data/goog.csv",
+          "src/assets/icons/isotipo.png",
+        ],
+      },
+    ],
   },
   destination: "./docs",
   css: "postcss",
