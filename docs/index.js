@@ -37616,7 +37616,7 @@ function AppFrame({ children: children2 }) {
       src: "assets/icons/isotipo.png",
       alt: "Your Company"
     }
-  )), /* @__PURE__ */ h("div", { class: "hidden md:block" }, /* @__PURE__ */ h("div", { class: "ml-10 flex items-baseline space-x-4" }, /* @__PURE__ */ h(
+  )), /* @__PURE__ */ h("div", { class: "md:block" }, /* @__PURE__ */ h("div", { class: "ml-10 flex items-baseline space-x-4" }, /* @__PURE__ */ h(
     "a",
     {
       href: "#",
@@ -37631,7 +37631,7 @@ function AppFrame({ children: children2 }) {
       class: "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
     },
     "Equipo"
-  )))), /* @__PURE__ */ h("div", { class: "hidden md:block" }, /* @__PURE__ */ h("div", { class: "ml-4 flex items-center md:ml-6" }, /* @__PURE__ */ h(
+  )))), /* @__PURE__ */ h("div", { class: "md:block" }, /* @__PURE__ */ h("div", { class: "ml-4 flex items-center md:ml-6" }, /* @__PURE__ */ h(
     "button",
     {
       type: "button",
