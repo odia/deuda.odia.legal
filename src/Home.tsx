@@ -9,7 +9,7 @@ export function Home() {
         <Deuda />
       </header>
 
-      <div class="mx-auto max-w-2xl px-4 pb-12 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl px-4 pb-12 sm:px-6 lg:px-8">
         <div class="rounded-lg bg-white px-5 py-6 shadow sm:px-6">
           <div class="px-4 py-6 sm:px-6">
             <h3 class="text-base font-semibold leading-7 text-gray-900">
@@ -23,7 +23,7 @@ export function Home() {
           <Histogram />
         </div>
       </div>
-      <div class="mx-auto max-w-2xl px-4 pb-12 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl px-4 pb-12 sm:px-6 lg:px-8">
         <div class="rounded-lg bg-white px-5 py-6 shadow sm:px-6">
           <div class="px-4 py-6 sm:px-6">
             <h3 class="text-base font-semibold leading-7 text-gray-900">
@@ -77,34 +77,34 @@ function Deuda(): VNode {
   return (
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between">
-        <div class="text-3xl font-bold tracking-tight text-white">
+        <div class="sm:text-2xl font-bold tracking-tight text-white">
           Deuda Nacional
         </div>
-        <div class="text-3xl font-bold tracking-tight text-white">
+        <div class="sm:text-2xl font-bold tracking-tight text-white">
           US $ 370.673.000.000,00
         </div>
       </div>
       <div class="flex justify-between">
-        <div class="text-3xl font-bold tracking-tight text-white">
+        <div class="sm:text-2xl font-bold tracking-tight text-white">
           Deuda por persona
         </div>
-        <div class="text-3xl font-bold tracking-tight text-white">
+        <div class="sm:text-2xl font-bold tracking-tight text-white">
           US $ 8.620,30
         </div>
       </div>
       <div class="flex justify-between">
-        <div class="text-3xl font-bold tracking-tight text-white">
+        <div class="sm:text-2xl font-bold tracking-tight text-white">
           Producto bruto interno
         </div>
-        <div class="text-3xl font-bold tracking-tight text-white">
+        <div class="sm:text-2xl font-bold tracking-tight text-white">
           US $ 640.591.000.000,00
         </div>
       </div>
       <div class="flex justify-between">
-        <div class="text-3xl font-bold tracking-tight text-white">
+        <div class="sm:text-2xl font-bold tracking-tight text-white">
           Produccion por persona
         </div>
-        <div class="text-3xl font-bold tracking-tight text-white">
+        <div class="sm:text-2xl font-bold tracking-tight text-white">
           US $ 14.897,46
         </div>
       </div>
