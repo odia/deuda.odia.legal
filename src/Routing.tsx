@@ -30,7 +30,7 @@ import { assertUnreachable } from "./utils.js";
 function AppFrame({ children }: { children: ComponentChildren }) {
   return (
     <div class="min-h-full">
-      <div class="bg-gray-800 pb-32">
+      <div class="bg-gray-800">
         <nav class="bg-gray-800">
           <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="border-b border-gray-700">
@@ -213,43 +213,9 @@ function AppFrame({ children }: { children: ComponentChildren }) {
             </div>
           </div>
         </nav>
-        <header class="py-10">
-          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between">
-              <div class="text-3xl font-bold tracking-tight text-white">
-                Deuda Nacional
-              </div>
-              <div class="text-3xl font-bold tracking-tight text-white">
-                US $ 400.000.000.000,00
-              </div>
-            </div>
-            <div class="flex justify-between">
-              <div class="text-3xl font-bold tracking-tight text-white">
-                Deuda por persona
-              </div>
-              <div class="text-3xl font-bold tracking-tight text-white">
-                US $ 8.695,65
-              </div>
-            </div>
-            <div class="flex justify-between">
-              <div class="text-3xl font-bold tracking-tight text-white">
-                Producto bruto interno
-              </div>
-              <div class="text-3xl font-bold tracking-tight text-white">
-                US $ 631.000.000.000,00
-              </div>
-            </div>
-          </div>
-        </header>
       </div>
 
-      <main class="-mt-32">
-        <div class="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-          <div class="rounded-lg bg-white px-5 py-6 shadow sm:px-6">
-            {children}
-          </div>
-        </div>
-      </main>
+      <main>{children}</main>
     </div>
   );
 }
