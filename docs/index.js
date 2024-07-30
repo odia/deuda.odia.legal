@@ -1860,7 +1860,7 @@ var require_jed = __commonJS({
             throw new Error(str);
           },
           parse: function parse2(input) {
-            var self2 = this, stack = [0], vstack = [null], lstack = [], table2 = this.table, yytext = "", yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF2 = 1;
+            var self2 = this, stack2 = [0], vstack = [null], lstack = [], table2 = this.table, yytext = "", yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF2 = 1;
             this.lexer.setInput(input);
             this.lexer.yy = this.yy;
             this.yy.lexer = this.lexer;
@@ -1871,7 +1871,7 @@ var require_jed = __commonJS({
             if (typeof this.yy.parseError === "function")
               this.parseError = this.yy.parseError;
             function popStack(n2) {
-              stack.length = stack.length - 2 * n2;
+              stack2.length = stack2.length - 2 * n2;
               vstack.length = vstack.length - n2;
               lstack.length = lstack.length - n2;
             }
@@ -1885,7 +1885,7 @@ var require_jed = __commonJS({
             }
             var symbol2, preErrorSymbol, state, action, a4, r3, yyval = {}, p4, len, newState, expected;
             while (true) {
-              state = stack[stack.length - 1];
+              state = stack2[stack2.length - 1];
               if (this.defaultActions[state]) {
                 action = this.defaultActions[state];
               } else {
@@ -1930,11 +1930,11 @@ var require_jed = __commonJS({
                       throw new Error(errStr || "Parsing halted.");
                     }
                     popStack(1);
-                    state = stack[stack.length - 1];
+                    state = stack2[stack2.length - 1];
                   }
                   preErrorSymbol = symbol2;
                   symbol2 = TERROR;
-                  state = stack[stack.length - 1];
+                  state = stack2[stack2.length - 1];
                   action = table2[state] && table2[state][TERROR];
                   recovering = 3;
                 }
@@ -1943,10 +1943,10 @@ var require_jed = __commonJS({
               }
               switch (action[0]) {
                 case 1:
-                  stack.push(symbol2);
+                  stack2.push(symbol2);
                   vstack.push(this.lexer.yytext);
                   lstack.push(this.lexer.yylloc);
-                  stack.push(action[1]);
+                  stack2.push(action[1]);
                   symbol2 = null;
                   if (!preErrorSymbol) {
                     yyleng = this.lexer.yyleng;
@@ -1974,15 +1974,15 @@ var require_jed = __commonJS({
                     return r3;
                   }
                   if (len) {
-                    stack = stack.slice(0, -1 * len * 2);
+                    stack2 = stack2.slice(0, -1 * len * 2);
                     vstack = vstack.slice(0, -1 * len);
                     lstack = lstack.slice(0, -1 * len);
                   }
-                  stack.push(this.productions_[action[1]][0]);
+                  stack2.push(this.productions_[action[1]][0]);
                   vstack.push(yyval.$);
                   lstack.push(yyval._$);
-                  newState = table2[stack[stack.length - 2]][stack[stack.length - 1]];
-                  stack.push(newState);
+                  newState = table2[stack2[stack2.length - 2]][stack2[stack2.length - 1]];
+                  stack2.push(newState);
                   break;
                 case 3:
                   return true;
@@ -20266,6 +20266,12 @@ function cross(...values2) {
   }
 }
 
+// node_modules/.pnpm/d3-array@3.2.4/node_modules/d3-array/src/cumsum.js
+function cumsum(values2, valueof2) {
+  var sum2 = 0, index2 = 0;
+  return Float64Array.from(values2, valueof2 === void 0 ? (v3) => sum2 += +v3 || 0 : (v3) => sum2 += +valueof2(v3, index2++, values2) || 0);
+}
+
 // node_modules/.pnpm/d3-array@3.2.4/node_modules/d3-array/src/variance.js
 function variance(values2, valueof2) {
   let count2 = 0;
@@ -20526,6 +20532,11 @@ function ascendingDefined(a4, b3) {
   return (a4 == null || !(a4 >= a4)) - (b3 == null || !(b3 >= b3)) || (a4 < b3 ? -1 : a4 > b3 ? 1 : 0);
 }
 
+// node_modules/.pnpm/d3-array@3.2.4/node_modules/d3-array/src/groupSort.js
+function groupSort(values2, reduce2, key) {
+  return (reduce2.length !== 2 ? sort(rollup(values2, reduce2, key), ([ak, av], [bk, bv]) => ascending(av, bv) || ascending(ak, bk)) : sort(group(values2, key), ([ak, av], [bk, bv]) => reduce2(av, bv) || ascending(ak, bk))).map(([key2]) => key2);
+}
+
 // node_modules/.pnpm/d3-array@3.2.4/node_modules/d3-array/src/ticks.js
 var e10 = Math.sqrt(50);
 var e5 = Math.sqrt(10);
@@ -20728,6 +20739,31 @@ function swap(array2, i3, j4) {
   const t4 = array2[i3];
   array2[i3] = array2[j4];
   array2[j4] = t4;
+}
+
+// node_modules/.pnpm/d3-array@3.2.4/node_modules/d3-array/src/greatest.js
+function greatest(values2, compare2 = ascending) {
+  let max3;
+  let defined2 = false;
+  if (compare2.length === 1) {
+    let maxValue;
+    for (const element of values2) {
+      const value = compare2(element);
+      if (defined2 ? ascending(value, maxValue) > 0 : ascending(value, value) === 0) {
+        max3 = element;
+        maxValue = value;
+        defined2 = true;
+      }
+    }
+  } else {
+    for (const value of values2) {
+      if (defined2 ? compare2(value, max3) > 0 : compare2(value, value) === 0) {
+        max3 = value;
+        defined2 = true;
+      }
+    }
+  }
+  return max3;
 }
 
 // node_modules/.pnpm/d3-array@3.2.4/node_modules/d3-array/src/quantile.js
@@ -25218,9 +25254,9 @@ var areaStream = {
     areaRingSum = new Adder();
   },
   result: function() {
-    var area = areaSum / 2;
+    var area2 = areaSum / 2;
     areaSum = new Adder();
-    return area;
+    return area2;
   }
 };
 function areaRingStart() {
@@ -25636,9 +25672,9 @@ function fit(projection3, fitBounds, object) {
     projection3.clipExtent(clip);
   return projection3;
 }
-function fitExtent(projection3, extent2, object) {
+function fitExtent(projection3, extent3, object) {
   return fit(projection3, function(b3) {
-    var w4 = extent2[1][0] - extent2[0][0], h3 = extent2[1][1] - extent2[0][1], k5 = Math.min(w4 / (b3[1][0] - b3[0][0]), h3 / (b3[1][1] - b3[0][1])), x6 = +extent2[0][0] + (w4 - k5 * (b3[1][0] + b3[0][0])) / 2, y4 = +extent2[0][1] + (h3 - k5 * (b3[1][1] + b3[0][1])) / 2;
+    var w4 = extent3[1][0] - extent3[0][0], h3 = extent3[1][1] - extent3[0][1], k5 = Math.min(w4 / (b3[1][0] - b3[0][0]), h3 / (b3[1][1] - b3[0][1])), x6 = +extent3[0][0] + (w4 - k5 * (b3[1][0] + b3[0][0])) / 2, y4 = +extent3[0][1] + (h3 - k5 * (b3[1][1] + b3[0][1])) / 2;
     projection3.scale(150 * k5).translate([x6, y4]);
   }, object);
 }
@@ -25827,8 +25863,8 @@ function projectionMutator(projectAt) {
   projection3.precision = function(_3) {
     return arguments.length ? (projectResample = resample_default(projectTransform, delta2 = _3 * _3), reset()) : sqrt(delta2);
   };
-  projection3.fitExtent = function(extent2, object) {
-    return fitExtent(projection3, extent2, object);
+  projection3.fitExtent = function(extent3, object) {
+    return fitExtent(projection3, extent3, object);
   };
   projection3.fitSize = function(size, object) {
     return fitSize(projection3, size, object);
@@ -25978,8 +26014,8 @@ function albersUsa_default() {
     hawaiiPoint = hawaii.translate([x6 - 0.205 * k5, y4 + 0.212 * k5]).clipExtent([[x6 - 0.214 * k5 + epsilon3, y4 + 0.166 * k5 + epsilon3], [x6 - 0.115 * k5 - epsilon3, y4 + 0.234 * k5 - epsilon3]]).stream(pointStream);
     return reset();
   };
-  albersUsa.fitExtent = function(extent2, object) {
-    return fitExtent(albersUsa, extent2, object);
+  albersUsa.fitExtent = function(extent3, object) {
+    return fitExtent(albersUsa, extent3, object);
   };
   albersUsa.fitSize = function(size, object) {
     return fitSize(albersUsa, size, object);
@@ -28432,6 +28468,82 @@ function line_default2(x6, y4) {
   return line2;
 }
 
+// node_modules/.pnpm/d3-shape@3.2.0/node_modules/d3-shape/src/area.js
+function area_default2(x05, y05, y12) {
+  var x12 = null, defined2 = constant_default4(true), context = null, curve = linear_default, output = null, path2 = withPath(area2);
+  x05 = typeof x05 === "function" ? x05 : x05 === void 0 ? x4 : constant_default4(+x05);
+  y05 = typeof y05 === "function" ? y05 : y05 === void 0 ? constant_default4(0) : constant_default4(+y05);
+  y12 = typeof y12 === "function" ? y12 : y12 === void 0 ? y3 : constant_default4(+y12);
+  function area2(data) {
+    var i3, j4, k5, n2 = (data = array_default(data)).length, d3, defined0 = false, buffer, x0z = new Array(n2), y0z = new Array(n2);
+    if (context == null)
+      output = curve(buffer = path2());
+    for (i3 = 0; i3 <= n2; ++i3) {
+      if (!(i3 < n2 && defined2(d3 = data[i3], i3, data)) === defined0) {
+        if (defined0 = !defined0) {
+          j4 = i3;
+          output.areaStart();
+          output.lineStart();
+        } else {
+          output.lineEnd();
+          output.lineStart();
+          for (k5 = i3 - 1; k5 >= j4; --k5) {
+            output.point(x0z[k5], y0z[k5]);
+          }
+          output.lineEnd();
+          output.areaEnd();
+        }
+      }
+      if (defined0) {
+        x0z[i3] = +x05(d3, i3, data), y0z[i3] = +y05(d3, i3, data);
+        output.point(x12 ? +x12(d3, i3, data) : x0z[i3], y12 ? +y12(d3, i3, data) : y0z[i3]);
+      }
+    }
+    if (buffer)
+      return output = null, buffer + "" || null;
+  }
+  function arealine() {
+    return line_default2().defined(defined2).curve(curve).context(context);
+  }
+  area2.x = function(_3) {
+    return arguments.length ? (x05 = typeof _3 === "function" ? _3 : constant_default4(+_3), x12 = null, area2) : x05;
+  };
+  area2.x0 = function(_3) {
+    return arguments.length ? (x05 = typeof _3 === "function" ? _3 : constant_default4(+_3), area2) : x05;
+  };
+  area2.x1 = function(_3) {
+    return arguments.length ? (x12 = _3 == null ? null : typeof _3 === "function" ? _3 : constant_default4(+_3), area2) : x12;
+  };
+  area2.y = function(_3) {
+    return arguments.length ? (y05 = typeof _3 === "function" ? _3 : constant_default4(+_3), y12 = null, area2) : y05;
+  };
+  area2.y0 = function(_3) {
+    return arguments.length ? (y05 = typeof _3 === "function" ? _3 : constant_default4(+_3), area2) : y05;
+  };
+  area2.y1 = function(_3) {
+    return arguments.length ? (y12 = _3 == null ? null : typeof _3 === "function" ? _3 : constant_default4(+_3), area2) : y12;
+  };
+  area2.lineX0 = area2.lineY0 = function() {
+    return arealine().x(x05).y(y05);
+  };
+  area2.lineY1 = function() {
+    return arealine().x(x05).y(y12);
+  };
+  area2.lineX1 = function() {
+    return arealine().x(x12).y(y05);
+  };
+  area2.defined = function(_3) {
+    return arguments.length ? (defined2 = typeof _3 === "function" ? _3 : constant_default4(!!_3), area2) : defined2;
+  };
+  area2.curve = function(_3) {
+    return arguments.length ? (curve = _3, context != null && (output = curve(context)), area2) : curve;
+  };
+  area2.context = function(_3) {
+    return arguments.length ? (_3 == null ? context = output = null : output = curve(context = _3), area2) : context;
+  };
+  return area2;
+}
+
 // node_modules/.pnpm/d3-shape@3.2.0/node_modules/d3-shape/src/curve/bump.js
 var Bump = class {
   constructor(context, x6) {
@@ -29926,6 +30038,7 @@ var singleton = [null];
 var field = (name) => (d3) => d3[name];
 var indexOf = { transform: range2 };
 var identity6 = { transform: (d3) => d3 };
+var one2 = () => 1;
 var yes = () => true;
 var string = (x6) => x6 == null ? x6 : `${x6}`;
 var number5 = (x6) => x6 == null ? x6 : +x6;
@@ -29977,6 +30090,9 @@ function map3(values2, f3, type2 = Array) {
 function slice2(values2, type2 = Array) {
   return values2 instanceof type2 ? values2.slice() : type2.from(values2);
 }
+function hasY({ y: y4, y1: y12, y2: y22 }) {
+  return y4 !== void 0 || y12 !== void 0 || y22 !== void 0;
+}
 function isObject(option) {
   return option?.toString === objectToString;
 }
@@ -29988,6 +30104,16 @@ function isOptions(option) {
 }
 function isDomainSort(sort2) {
   return isOptions(sort2) && sort2.value === void 0 && sort2.channel === void 0;
+}
+function maybeZero(x6, x12, x22, x32 = identity6) {
+  if (x12 === void 0 && x22 === void 0) {
+    x12 = 0, x22 = x6 === void 0 ? x32 : x6;
+  } else if (x12 === void 0) {
+    x12 = x6 === void 0 ? 0 : x6;
+  } else if (x22 === void 0) {
+    x22 = x6 === void 0 ? 0 : x6;
+  }
+  return [x12, x22];
 }
 function maybeTuple(x6, y4) {
   return x6 === void 0 && y4 === void 0 ? [first, second2] : [x6, y4];
@@ -30218,10 +30344,10 @@ function maybeFrameAnchor(value = "middle") {
 }
 function inherit2(options = {}, ...rest) {
   let o3 = options;
-  for (const defaults7 of rest) {
-    for (const key in defaults7) {
+  for (const defaults8 of rest) {
+    for (const key in defaults8) {
       if (o3[key] === void 0) {
-        const value = defaults7[key];
+        const value = defaults8[key];
         if (o3 === options)
           o3 = { ...o3, [key]: value };
         else
@@ -30483,8 +30609,8 @@ function maybeOutput(name, reduce2, inputs, asEvaluator = maybeEvaluator) {
     scope(scope, I4) {
       evaluator.scope(scope, I4);
     },
-    reduce(I4, extent2) {
-      O3.push(evaluator.reduce(I4, extent2));
+    reduce(I4, extent3) {
+      O3.push(evaluator.reduce(I4, extent3));
     }
   };
 }
@@ -30511,8 +30637,8 @@ function maybeEvaluator(name, reduce2, inputs, asReduce = maybeReduce) {
         context = reducer2.reduceIndex(I4, V3);
       }
     },
-    reduce(I4, extent2) {
-      return reducer2.scope == null ? reducer2.reduceIndex(I4, V3, extent2) : reducer2.reduceIndex(I4, V3, context, extent2);
+    reduce(I4, extent3) {
+      return reducer2.scope == null ? reducer2.reduceIndex(I4, V3, extent3) : reducer2.reduceIndex(I4, V3, context, extent3);
     }
   };
 }
@@ -30595,8 +30721,8 @@ function reduceReduce(reduce2) {
 }
 function reduceFunction(f3) {
   return {
-    reduceIndex(I4, X4, extent2) {
-      return f3(take(X4, I4), extent2);
+    reduceIndex(I4, X4, extent3) {
+      return f3(take(X4, I4), extent3);
     }
   };
 }
@@ -32892,7 +33018,7 @@ function facetFilter(facets, { channels: { fx, fy }, groups: groups2 }) {
 
 // node_modules/.pnpm/@observablehq+plot@0.6.14/node_modules/@observablehq/plot/src/mark.js
 var Mark = class {
-  constructor(data, channels = {}, options = {}, defaults7) {
+  constructor(data, channels = {}, options = {}, defaults8) {
     const {
       facet = "auto",
       facetAnchor,
@@ -32906,7 +33032,7 @@ var Mark = class {
       marginRight = margin,
       marginBottom = margin,
       marginLeft = margin,
-      clip = defaults7?.clip,
+      clip = defaults8?.clip,
       channels: extraChannels,
       tip: tip2,
       render
@@ -32926,8 +33052,8 @@ var Mark = class {
     channels = maybeNamed(channels);
     if (extraChannels !== void 0)
       channels = { ...maybeChannels(extraChannels), ...channels };
-    if (defaults7 !== void 0)
-      channels = { ...styles(this, options, defaults7), ...channels };
+    if (defaults8 !== void 0)
+      channels = { ...styles(this, options, defaults8), ...channels };
     this.channels = Object.fromEntries(
       Object.entries(channels).map(([name, channel]) => {
         if (isOptions(channel.value)) {
@@ -34833,13 +34959,13 @@ var legendRegistry = /* @__PURE__ */ new Map([
   ["color", legendColor],
   ["opacity", legendOpacity]
 ]);
-function exposeLegends(scales, context, defaults7 = {}) {
+function exposeLegends(scales, context, defaults8 = {}) {
   return (key, options) => {
     if (!legendRegistry.has(key))
       throw new Error(`unknown legend type: ${key}`);
     if (!(key in scales))
       return;
-    return legendRegistry.get(key)(scales[key], legendOptions(context, defaults7[key], options), (key2) => scales[key2]);
+    return legendRegistry.get(key)(scales[key], legendOptions(context, defaults8[key], options), (key2) => scales[key2]);
   };
 }
 function legendOptions({ className, ...context }, { label, ticks: ticks2, tickFormat: tickFormat2 } = {}, options) {
@@ -35736,11 +35862,11 @@ function inferAxes(marks2, channelsByScale, options) {
   maybeAxis(axes, xAxis, axisX, "bottom", "top", options, x6);
   return axes;
 }
-function maybeAxis(axes, axis2, axisType, primary, secondary, defaults7, options) {
+function maybeAxis(axes, axis2, axisType, primary, secondary, defaults8, options) {
   if (!axis2)
     return;
   const both = isBoth(axis2);
-  options = axisOptions(both ? primary : axis2, defaults7, options);
+  options = axisOptions(both ? primary : axis2, defaults8, options);
   const { line: line2 } = options;
   if ((axisType === axisY || axisType === axisX) && line2 && !isNone(line2))
     axes.push(frame2(lineOptions(options)));
@@ -35756,8 +35882,8 @@ function maybeGrid(axes, grid, gridType, options) {
 function isBoth(value) {
   return /^\s*both\s*$/i.test(value);
 }
-function axisOptions(anchor, defaults7, {
-  line: line2 = defaults7.line,
+function axisOptions(anchor, defaults8, {
+  line: line2 = defaults8.line,
   ticks: ticks2,
   tickSize,
   tickSpacing,
@@ -35767,9 +35893,9 @@ function axisOptions(anchor, defaults7, {
   fontVariant,
   ariaLabel,
   ariaDescription,
-  label = defaults7.label,
+  label = defaults8.label,
   labelAnchor,
-  labelArrow = defaults7.labelArrow,
+  labelArrow = defaults8.labelArrow,
   labelOffset
 }) {
   return {
@@ -36029,13 +36155,13 @@ function binn(bx, by, gx, gy, {
           filter2.scope("facet", facet);
         for (const [f3, I4] of maybeGroup(facet, G2)) {
           for (const [k6, g4] of maybeGroup(I4, K5)) {
-            for (const [b3, extent2] of bin(g4)) {
+            for (const [b3, extent3] of bin(g4)) {
               if (G2)
-                extent2.z = f3;
-              if (filter2 && !filter2.reduce(b3, extent2))
+                extent3.z = f3;
+              if (filter2 && !filter2.reduce(b3, extent3))
                 continue;
               groupFacet.push(i3++);
-              groupData.push(reduceData.reduceIndex(b3, data, extent2));
+              groupData.push(reduceData.reduceIndex(b3, data, extent3));
               if (K5)
                 GK2.push(k6);
               if (Z3)
@@ -36045,13 +36171,13 @@ function binn(bx, by, gx, gy, {
               if (S3)
                 GS2.push(G2 === S3 ? f3 : S3[(b3.length > 0 ? b3 : g4)[0]]);
               if (BX12)
-                BX12.push(extent2.x1), BX22.push(extent2.x2);
+                BX12.push(extent3.x1), BX22.push(extent3.x2);
               if (BY12)
-                BY12.push(extent2.y1), BY22.push(extent2.y2);
+                BY12.push(extent3.y1), BY22.push(extent3.y2);
               for (const o3 of outputs)
-                o3.reduce(b3, extent2);
+                o3.reduce(b3, extent3);
               if (sort2)
-                sort2.reduce(b3, extent2);
+                sort2.reduce(b3, extent3);
             }
           }
         }
@@ -36315,8 +36441,371 @@ var reduceY2 = {
   }
 };
 
-// node_modules/.pnpm/@observablehq+plot@0.6.14/node_modules/@observablehq/plot/src/marks/line.js
+// node_modules/.pnpm/@observablehq+plot@0.6.14/node_modules/@observablehq/plot/src/transforms/identity.js
+function maybeIdentityY(options = {}) {
+  return hasY(options) ? options : { ...options, y: identity6 };
+}
+
+// node_modules/.pnpm/@observablehq+plot@0.6.14/node_modules/@observablehq/plot/src/transforms/exclusiveFacets.js
+function exclusiveFacets(data, facets) {
+  if (facets.length === 1)
+    return { data, facets };
+  const n2 = data.length;
+  const O3 = new Uint8Array(n2);
+  let overlaps = 0;
+  for (const facet of facets) {
+    for (const i3 of facet) {
+      if (O3[i3])
+        ++overlaps;
+      O3[i3] = 1;
+    }
+  }
+  if (overlaps === 0)
+    return { data, facets };
+  data = slice2(data);
+  const R2 = data[reindex] = new Uint32Array(n2 + overlaps);
+  facets = facets.map((facet) => slice2(facet, Uint32Array));
+  let j4 = n2;
+  O3.fill(0);
+  for (const facet of facets) {
+    for (let k5 = 0, m3 = facet.length; k5 < m3; ++k5) {
+      const i3 = facet[k5];
+      if (O3[i3])
+        facet[k5] = j4, data[j4] = data[i3], R2[j4] = i3, ++j4;
+      else
+        R2[i3] = i3;
+      O3[i3] = 1;
+    }
+  }
+  return { data, facets };
+}
+
+// node_modules/.pnpm/@observablehq+plot@0.6.14/node_modules/@observablehq/plot/src/transforms/stack.js
+function stackY(stackOptions = {}, options = {}) {
+  if (arguments.length === 1)
+    [stackOptions, options] = mergeOptions2(stackOptions);
+  const { x1: x12, x: x6 = x12, y: y4, ...rest } = options;
+  const [transform2, X4, y12, y22] = stack(x6, y4, "x", "y", stackOptions, rest);
+  return { ...transform2, x1: x12, x: X4, y1: y12, y2: y22, y: mid(y12, y22) };
+}
+function maybeStackY({ y: y4, y1: y12, y2: y22, ...options } = {}) {
+  options = withTip(options, "x");
+  if (y12 === void 0 && y22 === void 0)
+    return stackY({ y: y4, ...options });
+  [y12, y22] = maybeZero(y4, y12, y22);
+  return { ...options, y1: y12, y2: y22 };
+}
+function mergeOptions2(options) {
+  const { offset: offset2, order, reverse: reverse2, ...rest } = options;
+  return [{ offset: offset2, order, reverse: reverse2 }, rest];
+}
+var lengthy = { length: true };
+function stack(x6, y4 = one2, kx2, ky2, { offset: offset2, order, reverse: reverse2 }, options) {
+  if (y4 === null)
+    throw new Error(`stack requires ${ky2}`);
+  const z4 = maybeZ(options);
+  const [X4, setX] = maybeColumn(x6);
+  const [Y12, setY1] = column(y4);
+  const [Y23, setY2] = column(y4);
+  Y12.hint = Y23.hint = lengthy;
+  offset2 = maybeOffset(offset2);
+  order = maybeOrder2(order, offset2, ky2);
+  return [
+    basic(options, (data, facets, plotOptions) => {
+      ({ data, facets } = exclusiveFacets(data, facets));
+      const X5 = x6 == null ? void 0 : setX(maybeApplyInterval(valueof(data, x6), plotOptions?.[kx2]));
+      const Y4 = valueof(data, y4, Float64Array);
+      const Z3 = valueof(data, z4);
+      const compare2 = order && order(data, X5, Y4, Z3);
+      const n2 = data.length;
+      const Y13 = setY1(new Float64Array(n2));
+      const Y24 = setY2(new Float64Array(n2));
+      const facetstacks = [];
+      for (const facet of facets) {
+        const stacks = X5 ? Array.from(group(facet, (i3) => X5[i3]).values()) : [facet];
+        if (compare2)
+          for (const stack2 of stacks)
+            stack2.sort(compare2);
+        for (const stack2 of stacks) {
+          let yn2 = 0;
+          let yp = 0;
+          if (reverse2)
+            stack2.reverse();
+          for (const i3 of stack2) {
+            const y5 = Y4[i3];
+            if (y5 < 0)
+              yn2 = Y24[i3] = (Y13[i3] = yn2) + y5;
+            else if (y5 > 0)
+              yp = Y24[i3] = (Y13[i3] = yp) + y5;
+            else
+              Y24[i3] = Y13[i3] = yp;
+          }
+        }
+        facetstacks.push(stacks);
+      }
+      if (offset2)
+        offset2(facetstacks, Y13, Y24, Z3);
+      return { data, facets };
+    }),
+    X4,
+    Y12,
+    Y23
+  ];
+}
+function maybeOffset(offset2) {
+  if (offset2 == null)
+    return;
+  if (typeof offset2 === "function")
+    return offset2;
+  switch (`${offset2}`.toLowerCase()) {
+    case "expand":
+    case "normalize":
+      return offsetExpand;
+    case "center":
+    case "silhouette":
+      return offsetCenter;
+    case "wiggle":
+      return offsetWiggle;
+  }
+  throw new Error(`unknown offset: ${offset2}`);
+}
+function extent2(stack2, Y23) {
+  let min4 = 0, max3 = 0;
+  for (const i3 of stack2) {
+    const y4 = Y23[i3];
+    if (y4 < min4)
+      min4 = y4;
+    if (y4 > max3)
+      max3 = y4;
+  }
+  return [min4, max3];
+}
+function offsetExpand(facetstacks, Y12, Y23) {
+  for (const stacks of facetstacks) {
+    for (const stack2 of stacks) {
+      const [yn2, yp] = extent2(stack2, Y23);
+      for (const i3 of stack2) {
+        const m3 = 1 / (yp - yn2 || 1);
+        Y12[i3] = m3 * (Y12[i3] - yn2);
+        Y23[i3] = m3 * (Y23[i3] - yn2);
+      }
+    }
+  }
+}
+function offsetCenter(facetstacks, Y12, Y23) {
+  for (const stacks of facetstacks) {
+    for (const stack2 of stacks) {
+      const [yn2, yp] = extent2(stack2, Y23);
+      for (const i3 of stack2) {
+        const m3 = (yp + yn2) / 2;
+        Y12[i3] -= m3;
+        Y23[i3] -= m3;
+      }
+    }
+    offsetZero(stacks, Y12, Y23);
+  }
+  offsetCenterFacets(facetstacks, Y12, Y23);
+}
+function offsetWiggle(facetstacks, Y12, Y23, Z3) {
+  for (const stacks of facetstacks) {
+    const prev = new InternMap();
+    let y4 = 0;
+    for (const stack2 of stacks) {
+      let j4 = -1;
+      const Fi = stack2.map((i3) => Math.abs(Y23[i3] - Y12[i3]));
+      const Df = stack2.map((i3) => {
+        j4 = Z3 ? Z3[i3] : ++j4;
+        const value = Y23[i3] - Y12[i3];
+        const diff = prev.has(j4) ? value - prev.get(j4) : 0;
+        prev.set(j4, value);
+        return diff;
+      });
+      const Cf1 = [0, ...cumsum(Df)];
+      for (const i3 of stack2) {
+        Y12[i3] += y4;
+        Y23[i3] += y4;
+      }
+      const s1 = sum(Fi);
+      if (s1)
+        y4 -= sum(Fi, (d3, i3) => (Df[i3] / 2 + Cf1[i3]) * d3) / s1;
+    }
+    offsetZero(stacks, Y12, Y23);
+  }
+  offsetCenterFacets(facetstacks, Y12, Y23);
+}
+function offsetZero(stacks, Y12, Y23) {
+  const m3 = min(stacks, (stack2) => min(stack2, (i3) => Y12[i3]));
+  for (const stack2 of stacks) {
+    for (const i3 of stack2) {
+      Y12[i3] -= m3;
+      Y23[i3] -= m3;
+    }
+  }
+}
+function offsetCenterFacets(facetstacks, Y12, Y23) {
+  const n2 = facetstacks.length;
+  if (n2 === 1)
+    return;
+  const facets = facetstacks.map((stacks) => stacks.flat());
+  const m3 = facets.map((I4) => (min(I4, (i3) => Y12[i3]) + max(I4, (i3) => Y23[i3])) / 2);
+  const m0 = min(m3);
+  for (let j4 = 0; j4 < n2; j4++) {
+    const p4 = m0 - m3[j4];
+    for (const i3 of facets[j4]) {
+      Y12[i3] += p4;
+      Y23[i3] += p4;
+    }
+  }
+}
+function maybeOrder2(order, offset2, ky2) {
+  if (order === void 0 && offset2 === offsetWiggle)
+    return orderInsideOut(ascendingDefined2);
+  if (order == null)
+    return;
+  if (typeof order === "string") {
+    const negate = order.startsWith("-");
+    const compare2 = negate ? descendingDefined : ascendingDefined2;
+    switch ((negate ? order.slice(1) : order).toLowerCase()) {
+      case "value":
+      case ky2:
+        return orderY(compare2);
+      case "z":
+        return orderZ(compare2);
+      case "sum":
+        return orderSum(compare2);
+      case "appearance":
+        return orderAppearance(compare2);
+      case "inside-out":
+        return orderInsideOut(compare2);
+    }
+    return orderAccessor(field(order));
+  }
+  if (typeof order === "function")
+    return (order.length === 1 ? orderAccessor : orderComparator)(order);
+  if (Array.isArray(order))
+    return orderGiven(order);
+  throw new Error(`invalid order: ${order}`);
+}
+function orderY(compare2) {
+  return (data, X4, Y4) => (i3, j4) => compare2(Y4[i3], Y4[j4]);
+}
+function orderZ(compare2) {
+  return (data, X4, Y4, Z3) => (i3, j4) => compare2(Z3[i3], Z3[j4]);
+}
+function orderSum(compare2) {
+  return orderZDomain(
+    compare2,
+    (data, X4, Y4, Z3) => groupSort(
+      range2(data),
+      (I4) => sum(I4, (i3) => Y4[i3]),
+      (i3) => Z3[i3]
+    )
+  );
+}
+function orderAppearance(compare2) {
+  return orderZDomain(
+    compare2,
+    (data, X4, Y4, Z3) => groupSort(
+      range2(data),
+      (I4) => X4[greatest(I4, (i3) => Y4[i3])],
+      (i3) => Z3[i3]
+    )
+  );
+}
+function orderInsideOut(compare2) {
+  return orderZDomain(compare2, (data, X4, Y4, Z3) => {
+    const I4 = range2(data);
+    const K5 = groupSort(
+      I4,
+      (I5) => X4[greatest(I5, (i3) => Y4[i3])],
+      (i3) => Z3[i3]
+    );
+    const sums = rollup(
+      I4,
+      (I5) => sum(I5, (i3) => Y4[i3]),
+      (i3) => Z3[i3]
+    );
+    const Kp = [], Kn = [];
+    let s4 = 0;
+    for (const k5 of K5) {
+      if (s4 < 0) {
+        s4 += sums.get(k5);
+        Kp.push(k5);
+      } else {
+        s4 -= sums.get(k5);
+        Kn.push(k5);
+      }
+    }
+    return Kn.reverse().concat(Kp);
+  });
+}
+function orderAccessor(f3) {
+  return (data) => {
+    const O3 = valueof(data, f3);
+    return (i3, j4) => ascendingDefined2(O3[i3], O3[j4]);
+  };
+}
+function orderComparator(f3) {
+  return (data) => (i3, j4) => f3(data[i3], data[j4]);
+}
+function orderGiven(domain) {
+  return orderZDomain(ascendingDefined2, () => domain);
+}
+function orderZDomain(compare2, domain) {
+  return (data, X4, Y4, Z3) => {
+    if (!Z3)
+      throw new Error("missing channel: z");
+    const map4 = new InternMap(domain(data, X4, Y4, Z3).map((d3, i3) => [d3, i3]));
+    return (i3, j4) => compare2(map4.get(Z3[i3]), map4.get(Z3[j4]));
+  };
+}
+
+// node_modules/.pnpm/@observablehq+plot@0.6.14/node_modules/@observablehq/plot/src/marks/area.js
 var defaults6 = {
+  ariaLabel: "area",
+  strokeWidth: 1,
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  strokeMiterlimit: 1
+};
+var Area = class extends Mark {
+  constructor(data, options = {}) {
+    const { x1: x12, y1: y12, x2: x22, y2: y22, z: z4, curve, tension } = options;
+    super(
+      data,
+      {
+        x1: { value: x12, scale: "x" },
+        y1: { value: y12, scale: "y" },
+        x2: { value: x22, scale: "x", optional: true },
+        y2: { value: y22, scale: "y", optional: true },
+        z: { value: maybeZ(options), optional: true }
+      },
+      options,
+      defaults6
+    );
+    this.z = z4;
+    this.curve = maybeCurve(curve, tension);
+  }
+  filter(index2) {
+    return index2;
+  }
+  render(index2, scales, channels, dimensions, context) {
+    const { x1: X12, y1: Y12, x2: X23 = X12, y2: Y23 = Y12 } = channels;
+    return create2("svg:g", context).call(applyIndirectStyles, this, dimensions, context).call(applyTransform, this, scales, 0, 0).call(
+      (g4) => g4.selectAll().data(groupIndex(index2, [X12, Y12, X23, Y23], this, channels)).enter().append("path").call(applyDirectStyles, this).call(applyGroupedChannelStyles, this, channels).attr(
+        "d",
+        area_default2().curve(this.curve).defined((i3) => i3 >= 0).x0((i3) => X12[i3]).y0((i3) => Y12[i3]).x1((i3) => X23[i3]).y1((i3) => Y23[i3])
+      )
+    ).node();
+  }
+};
+function areaY(data, options) {
+  const { x: x6 = indexOf, ...rest } = maybeDenseIntervalX(options);
+  return new Area(data, maybeStackY(maybeIdentityY({ ...rest, x1: x6, x2: void 0 })));
+}
+
+// node_modules/.pnpm/@observablehq+plot@0.6.14/node_modules/@observablehq/plot/src/marks/line.js
+var defaults7 = {
   ariaLabel: "line",
   fill: "none",
   stroke: "currentColor",
@@ -36336,7 +36825,7 @@ var Line = class extends Mark {
         z: { value: maybeZ(options), optional: true }
       },
       options,
-      defaults6
+      defaults7
     );
     this.z = z4;
     this.curve = maybeCurveAuto(curve, tension);
@@ -36410,6 +36899,8 @@ function Histogram({}) {
       style: "width: 100%;",
       grid: true,
       height: 300,
+      x: { label: "Fecha " },
+      y: { label: "Precio (ARS)" },
       marks: [
         lineY(goog, { x: "Date", y: "Close", stroke: "red" }),
         lineY(aapl, { x: "Date", y: "Close", stroke: "blue" })
@@ -36420,10 +36911,61 @@ function Histogram({}) {
   }, [goog, aapl]);
   return /* @__PURE__ */ h("div", { ref: containerRef });
 }
+function Normalized({}) {
+  const containerRef = _2(null);
+  const [riaa, setRiaa] = p3();
+  h2(() => {
+    csv2("assets/data/riaa-us-revenue.csv", autoType).then((d3) => {
+      setRiaa(d3);
+    });
+  }, []);
+  h2(() => {
+    if (riaa === void 0)
+      return;
+    if (containerRef.current === null)
+      return;
+    console.log(riaa);
+    const plot2 = plot({
+      y: {
+        label: "\u2191 Annual revenue (%)",
+        percent: true
+      },
+      marks: [
+        areaY(riaa, stackY({ offset: "normalize", order: "group", reverse: true }, { x: "year", y: "revenue", z: "format", fill: "group" })),
+        ruleY([0, 1])
+      ]
+    });
+    containerRef.current.append(plot2);
+    return () => plot2.remove();
+  }, [riaa]);
+  return /* @__PURE__ */ h("div", { ref: containerRef });
+}
 
 // src/Home.tsx
 function Home() {
-  return /* @__PURE__ */ h("div", null, /* @__PURE__ */ h(Histogram, null));
+  return /* @__PURE__ */ h("div", null, /* @__PURE__ */ h("header", { class: "py-10 bg-gray-800 " }, /* @__PURE__ */ h(EnConstruccion, null), /* @__PURE__ */ h(Deuda, null)), /* @__PURE__ */ h("div", { class: "mx-auto max-w-2xl px-4 pb-12 sm:px-6 lg:px-8" }, /* @__PURE__ */ h("div", { class: "rounded-lg bg-white px-5 py-6 shadow sm:px-6" }, /* @__PURE__ */ h("div", { class: "px-4 py-6 sm:px-6" }, /* @__PURE__ */ h("h3", { class: "text-base font-semibold leading-7 text-gray-900" }, "Crecimiento de la deuda"), /* @__PURE__ */ h("p", { class: "mt-1 max-w-2xl text-sm leading-6 text-gray-500" }, "Descripcion del grafico")), /* @__PURE__ */ h(Histogram, null))), /* @__PURE__ */ h("div", { class: "mx-auto max-w-2xl px-4 pb-12 sm:px-6 lg:px-8" }, /* @__PURE__ */ h("div", { class: "rounded-lg bg-white px-5 py-6 shadow sm:px-6" }, /* @__PURE__ */ h("div", { class: "px-4 py-6 sm:px-6" }, /* @__PURE__ */ h("h3", { class: "text-base font-semibold leading-7 text-gray-900" }, "Asignacion presupuestaria"), /* @__PURE__ */ h("p", { class: "mt-1 max-w-2xl text-sm leading-6 text-gray-500" }, "Descripcion del grafico")), /* @__PURE__ */ h(Normalized, null))));
+}
+function EnConstruccion() {
+  return /* @__PURE__ */ h("div", { class: "rounded-md bg-yellow-50 p-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-4" }, /* @__PURE__ */ h("div", { class: "flex" }, /* @__PURE__ */ h("div", { class: "flex-shrink-0" }, /* @__PURE__ */ h(
+    "svg",
+    {
+      class: "h-5 w-5 text-yellow-400",
+      viewBox: "0 0 20 20",
+      fill: "currentColor",
+      "aria-hidden": "true"
+    },
+    /* @__PURE__ */ h(
+      "path",
+      {
+        "fill-rule": "evenodd",
+        d: "M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z",
+        "clip-rule": "evenodd"
+      }
+    )
+  )), /* @__PURE__ */ h("div", { class: "ml-3" }, /* @__PURE__ */ h("h3", { class: "text-sm font-medium text-yellow-800" }, "Sitio en construcci\xF3n"), /* @__PURE__ */ h("div", { class: "mt-2 text-sm text-yellow-700" }, /* @__PURE__ */ h("p", null, "Los datos no son reales.")))));
+}
+function Deuda() {
+  return /* @__PURE__ */ h("div", { class: "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" }, /* @__PURE__ */ h("div", { class: "flex justify-between" }, /* @__PURE__ */ h("div", { class: "text-3xl font-bold tracking-tight text-white" }, "Deuda Nacional"), /* @__PURE__ */ h("div", { class: "text-3xl font-bold tracking-tight text-white" }, "US $ 370.673.000.000,00")), /* @__PURE__ */ h("div", { class: "flex justify-between" }, /* @__PURE__ */ h("div", { class: "text-3xl font-bold tracking-tight text-white" }, "Deuda por persona"), /* @__PURE__ */ h("div", { class: "text-3xl font-bold tracking-tight text-white" }, "US $ 8.620,30")), /* @__PURE__ */ h("div", { class: "flex justify-between" }, /* @__PURE__ */ h("div", { class: "text-3xl font-bold tracking-tight text-white" }, "Producto bruto interno"), /* @__PURE__ */ h("div", { class: "text-3xl font-bold tracking-tight text-white" }, "US $ 640.591.000.000,00")), /* @__PURE__ */ h("div", { class: "flex justify-between" }, /* @__PURE__ */ h("div", { class: "text-3xl font-bold tracking-tight text-white" }, "Produccion por persona"), /* @__PURE__ */ h("div", { class: "text-3xl font-bold tracking-tight text-white" }, "US $ 14.897,46")));
 }
 
 // src/utils.ts
@@ -37067,7 +37609,7 @@ var PAGINATED_LIST_REQUEST = PAGINATED_LIST_SIZE + 1;
 
 // src/Routing.tsx
 function AppFrame({ children: children2 }) {
-  return /* @__PURE__ */ h("div", { class: "min-h-full" }, /* @__PURE__ */ h("div", { class: "bg-gray-800 pb-32" }, /* @__PURE__ */ h("nav", { class: "bg-gray-800" }, /* @__PURE__ */ h("div", { class: "mx-auto max-w-7xl sm:px-6 lg:px-8" }, /* @__PURE__ */ h("div", { class: "border-b border-gray-700" }, /* @__PURE__ */ h("div", { class: "flex h-16 items-center justify-between px-4 sm:px-0" }, /* @__PURE__ */ h("div", { class: "flex items-center" }, /* @__PURE__ */ h("div", { class: "flex-shrink-0" }, /* @__PURE__ */ h(
+  return /* @__PURE__ */ h("div", { class: "min-h-full" }, /* @__PURE__ */ h("div", { class: "bg-gray-800" }, /* @__PURE__ */ h("nav", { class: "bg-gray-800" }, /* @__PURE__ */ h("div", { class: "mx-auto max-w-7xl sm:px-6 lg:px-8" }, /* @__PURE__ */ h("div", { class: "border-b border-gray-700" }, /* @__PURE__ */ h("div", { class: "flex h-16 items-center justify-between px-4 sm:px-0" }, /* @__PURE__ */ h("div", { class: "flex items-center" }, /* @__PURE__ */ h("div", { class: "flex-shrink-0" }, /* @__PURE__ */ h(
     "img",
     {
       class: "h-8 w-8",
@@ -37191,7 +37733,7 @@ function AppFrame({ children: children2 }) {
         }
       )
     )
-  )), /* @__PURE__ */ h("div", { class: "mt-3 space-y-1 px-2" })))), /* @__PURE__ */ h("header", { class: "py-10" }, /* @__PURE__ */ h("div", { class: "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" }, /* @__PURE__ */ h("div", { class: "flex justify-between" }, /* @__PURE__ */ h("div", { class: "text-3xl font-bold tracking-tight text-white" }, "Deuda Nacional"), /* @__PURE__ */ h("div", { class: "text-3xl font-bold tracking-tight text-white" }, "US $ 400.000.000.000,00")), /* @__PURE__ */ h("div", { class: "flex justify-between" }, /* @__PURE__ */ h("div", { class: "text-3xl font-bold tracking-tight text-white" }, "Deuda por persona"), /* @__PURE__ */ h("div", { class: "text-3xl font-bold tracking-tight text-white" }, "US $ 8.695,65")), /* @__PURE__ */ h("div", { class: "flex justify-between" }, /* @__PURE__ */ h("div", { class: "text-3xl font-bold tracking-tight text-white" }, "Producto bruto interno"), /* @__PURE__ */ h("div", { class: "text-3xl font-bold tracking-tight text-white" }, "US $ 631.000.000.000,00"))))), /* @__PURE__ */ h("main", { class: "-mt-32" }, /* @__PURE__ */ h("div", { class: "mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8" }, /* @__PURE__ */ h("div", { class: "rounded-lg bg-white px-5 py-6 shadow sm:px-6" }, children2))));
+  )), /* @__PURE__ */ h("div", { class: "mt-3 space-y-1 px-2" }))))), /* @__PURE__ */ h("main", null, children2));
 }
 function Routing() {
   return /* @__PURE__ */ h(AppFrame, null, /* @__PURE__ */ h(PublicRounting, { onLoggedUser: (username, token) => {

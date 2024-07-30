@@ -28,6 +28,7 @@ await build({
           "src/index.html",
           "src/settings.json",
           "src/assets/data/aapl.csv",
+          "src/assets/data/riaa-us-revenue.csv",
           "src/assets/data/goog.csv",
           "src/assets/icons/isotipo.png",
         ],
