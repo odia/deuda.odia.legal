@@ -12,6 +12,8 @@ import {
 } from "date-fns";
 import { h, VNode } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
+import { chart as newChart, colors as colorScale, series as series, series} from "./chart.js";
+import { Legend } from "./colorlegends.js"; 
 // import {createElement as h} from "preact";
 interface Props {}
 
@@ -35,6 +37,7 @@ export function Histogram({}: Props): VNode {
   const containerRef = useRef<HTMLDivElement>(null);
   const [goog, setGoog] = useState<d3.DSVParsedArray<object>>();
   const [aapl, setAapl] = useState<d3.DSVParsedArray<object>>();
+  const [ejem, setEjemplo] = useState<d3.DSVParsedArray<object>>();
   useEffect(() => {
     d3.csv("assets/data/goog.csv", d3.autoType).then((d) => {
       setGoog(d);
@@ -42,11 +45,15 @@ export function Histogram({}: Props): VNode {
     d3.csv("assets/data/aapl.csv", d3.autoType).then((d) => {
       setAapl(d);
     });
+    d3.csv("assets/data/ejemplo.csv", d3.autoType).then((d) => {
+      setEjemplo(d);
+    });
   }, []);
 
   useEffect(() => {
     if (goog === undefined) return;
     if (aapl === undefined) return;
+    if (ejem === undefined) return;
     if (containerRef.current === null) return;
 
     const plot = Plot.plot({
@@ -63,11 +70,59 @@ export function Histogram({}: Props): VNode {
 
     containerRef.current.append(plot);
     return () => plot.remove();
-  }, [goog, aapl]);
+  }, [goog, aapl, ejem]);
 
   return <div ref={containerRef} />;
 }
 
+
+export function Normalized({}: Props): VNode {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const legendRef = useRef<HTMLDivElement>(null);  // Ref for the legend container
+  const [riaa, setRiaa] = useState<d3.DSVParsedArray<object>>();
+
+  useEffect(() => {
+    // Load the dataset
+    d3.csv("assets/data/ejemplo.csv", d3.autoType).then((d) => {
+      setRiaa(d);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!riaa || !containerRef.current || !legendRef.current) return;
+    const colors = colorScale();
+    const s = series(d3, colors, riaa);
+    // Create the chart using the newChart function
+    const chart = newChart(d3, riaa, s ,colors);
+
+    // Append the chart to the container
+    containerRef.current.appendChild(chart);
+
+    // Create the color legend using the Legend function from a33468b95d0b15b0@817.js
+    const legend = Legend(colorScale(), { title: 'Revenue by Format' });
+    legendRef.current.appendChild(legend);
+
+    // Cleanup when component unmounts
+    return () => {
+      if (containerRef.current.firstChild) {
+        containerRef.current.removeChild(containerRef.current.firstChild);
+      }
+      if (legendRef.current.firstChild) {
+        legendRef.current.removeChild(legendRef.current.firstChild);
+      }
+    };
+  }, [riaa]);
+
+  return (
+    <div>
+      <div ref={containerRef} />  {/* Container for the chart */}
+      <div ref={legendRef} />  {/* Container for the legend */}
+    </div>
+  );
+}
+
+
+/* 
 export function Normalized({}: Props): VNode {
   const containerRef = useRef<HTMLDivElement>(null);
   const [riaa, setRiaa] = useState<d3.DSVParsedArray<object>>();
@@ -116,3 +171,4 @@ export function Normalized({}: Props): VNode {
 
   return <div ref={containerRef} />;
 }
+ */
