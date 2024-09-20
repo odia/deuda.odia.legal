@@ -90,7 +90,12 @@ export function Normalized({}: Props): VNode {
   useEffect(() => {
     if (!riaa || !containerRef.current || !legendRef.current) return;
     const colors = colorScale();
-    const s = series(d3, colors, riaa);
+    const pepe = riaa.map(({ Format, Year, ["Revenue (Inflation Adjusted)"]: Revenue }:any) => ({
+      name: Format,
+      year: +Year,
+      value: +Revenue
+    }))
+    const s = series(d3, colors, pepe);
     // Create the chart using the newChart function
     const chart = newChart(d3, riaa, s, colors);
 
@@ -98,7 +103,7 @@ export function Normalized({}: Props): VNode {
     containerRef.current.appendChild(chart);
 
     // Create the color legend using the Legend function from a33468b95d0b15b0@817.js
-    const legend = Legend(colorScale(), { title: "Revenue by Format" });
+    const legend = Legend(d3, colorScale(), { title: "Revenue by Format" });
     if (legend) {
       legendRef.current.appendChild(legend);
     } else {

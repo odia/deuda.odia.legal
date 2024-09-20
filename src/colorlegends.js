@@ -1,4 +1,5 @@
 function Legend(
+  d3,
   color,
   {
     title,
