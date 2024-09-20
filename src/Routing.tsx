@@ -26,6 +26,7 @@ import { AccessToken } from "@gnu-taler/taler-util";
 import { useEffect } from "preact/hooks";
 import { Home } from "./Home.js";
 import { assertUnreachable } from "./utils.js";
+import { Info } from "./Info.js";
 
 function AppFrame({ children }: { children: ComponentChildren }) {
   return (
@@ -47,30 +48,24 @@ function AppFrame({ children }: { children: ComponentChildren }) {
                     <div class="ml-10 flex items-baseline space-x-4">
                       {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                       <a
-                        href="#"
+                        href="#/home"
                         class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
                         aria-current="page"
                       >
                         Deuda publica
                       </a>
                       <a
-                        href="#"
+                        href="#/info"
                         class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                       >
-                        Equipo
-                      </a>
-                      {/* <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calendar</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Reports</a> */}
+                        Info
+                      </a>{" "}
                     </div>
                   </div>
                 </div>
-              
               </div>
             </div>
           </div>
-
-         
         </nav>
       </div>
 
@@ -89,6 +84,7 @@ export function Routing(): VNode {
 
 const publicPages = {
   home: urlPattern(/\/home/, () => "#/home"),
+  info: urlPattern(/\/info/, () => "#/info"),
 };
 
 function PublicRounting({
@@ -115,6 +111,12 @@ function PublicRounting({
     case "home": {
       return <Home />;
     }
+    case "info": {
+      return <Info />;
+    }
+    // case "equipo": {
+    //   return <Equipo />;
+    // }
 
     default:
       assertUnreachable(location);
