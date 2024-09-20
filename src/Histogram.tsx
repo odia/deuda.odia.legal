@@ -12,8 +12,8 @@ import {
 } from "date-fns";
 import { h, VNode } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
-import { chart as newChart, colors as colorScale, series as series, series} from "./chart.js";
-import { Legend } from "./colorlegends.js"; 
+import { chart as newChart, colors as colorScale, series } from "./chart.js";
+import { Legend } from "./colorlegends.js";
 // import {createElement as h} from "preact";
 interface Props {}
 
@@ -75,10 +75,9 @@ export function Histogram({}: Props): VNode {
   return <div ref={containerRef} />;
 }
 
-
 export function Normalized({}: Props): VNode {
   const containerRef = useRef<HTMLDivElement>(null);
-  const legendRef = useRef<HTMLDivElement>(null);  // Ref for the legend container
+  const legendRef = useRef<HTMLDivElement>(null); // Ref for the legend container
   const [riaa, setRiaa] = useState<d3.DSVParsedArray<object>>();
 
   useEffect(() => {
@@ -93,21 +92,25 @@ export function Normalized({}: Props): VNode {
     const colors = colorScale();
     const s = series(d3, colors, riaa);
     // Create the chart using the newChart function
-    const chart = newChart(d3, riaa, s ,colors);
+    const chart = newChart(d3, riaa, s, colors);
 
     // Append the chart to the container
     containerRef.current.appendChild(chart);
 
     // Create the color legend using the Legend function from a33468b95d0b15b0@817.js
-    const legend = Legend(colorScale(), { title: 'Revenue by Format' });
-    legendRef.current.appendChild(legend);
+    const legend = Legend(colorScale(), { title: "Revenue by Format" });
+    if (legend) {
+      legendRef.current.appendChild(legend);
+    } else {
+      console.log("por alguna razon no se creo el componente");
+    }
 
     // Cleanup when component unmounts
     return () => {
-      if (containerRef.current.firstChild) {
+      if (containerRef.current && containerRef.current.firstChild) {
         containerRef.current.removeChild(containerRef.current.firstChild);
       }
-      if (legendRef.current.firstChild) {
+      if (legendRef.current && legendRef.current.firstChild) {
         legendRef.current.removeChild(legendRef.current.firstChild);
       }
     };
@@ -115,12 +118,11 @@ export function Normalized({}: Props): VNode {
 
   return (
     <div>
-      <div ref={containerRef} />  {/* Container for the chart */}
-      <div ref={legendRef} />  {/* Container for the legend */}
+      <div ref={containerRef} /> {/* Container for the chart */}
+      <div ref={legendRef} /> {/* Container for the legend */}
     </div>
   );
 }
-
 
 /* 
 export function Normalized({}: Props): VNode {

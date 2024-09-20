@@ -33,6 +33,7 @@ const build = initializeDev({
           "src/assets/data/aapl.csv",
           "src/assets/data/riaa-us-revenue.csv",
           "src/assets/data/goog.csv",
+          "src/assets/data/ejemplo.csv",
           "src/assets/icons/isotipo.png",
         ],
       },
